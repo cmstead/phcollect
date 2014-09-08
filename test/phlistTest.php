@@ -34,6 +34,11 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
         $this->assertEquals($testList->first(), 1);
     }
     
+    public function testFirstReturnsNullIfNoFirstValue(){
+        $testList = new PhList();
+        $this->assert($testList->first(), null);
+    }
+    
     public function testLastGetsLastValueOfList(){
         $testList = new PhList(1, 2, 3, 4);
         $this->assertEquals($testList->last(), 4);
