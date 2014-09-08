@@ -29,19 +29,29 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
         $this->assertEquals(gettype($returnedValue), "array");
     }
     
-    public function testPhListIsInstantiableWithASingleValue(){
-        $testList = new PhList("test value 1");
-        $this->assertEquals(sizeof($testList->toArray()), 1);
-    }
-    
-    public function testPhListIsInstantiableWithMultipleValues(){
-        $testList = new PhList("1", "2", "3");
-        $this->assertEquals(sizeof($testList->toArray()), 3);
+    public function testFirstGetsFirstValueOfList(){
+        $testList = new PhList(1, 2, 3, 4);
+        $this->assertEquals($testList->first(), 1);
     }
     
     public function testLastGetsLastValueOfList(){
         $testList = new PhList(1, 2, 3, 4);
         $this->assertEquals($testList->last(), 4);
+    }
+    
+    public function testLengthReturnsCountOfListElements(){
+        $testList = new PhList(1, 2, 3, 4);
+        $this->assertEquals($testList->length(), 4);
+    }
+    
+    public function testPhListIsInstantiableWithASingleValue(){
+        $testList = new PhList("test value 1");
+        $this->assertEquals($testList->length(), 1);
+    }
+    
+    public function testPhListIsInstantiableWithMultipleValues(){
+        $testList = new PhList("1", "2", "3");
+        $this->assertEquals($testList->length(), 3);
     }
     
     public function testPushAddsValueToEndOfList(){
@@ -62,6 +72,47 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
         }
         
         $this->assertEquals($exceptionThrown, true);
+    }
+    
+    public function testPopReturnsLastElementOfList(){
+        $testList = new PhList(1, 2, 3, 4);
+        
+        $this->assertEquals($testList->pop(), 4);
+    }
+    
+    public function testPopRemovesLastElementOfList(){
+        $testList = new PhList(1, 2, 3, 4);
+        $testList->pop();
+        
+        //These asserts verify that the element int 4 was correctly removed
+        $this->assertEquals($testList->last(), 3);
+        $this->assertEquals($testList->length(), 3);
+    }
+    
+    public function testShiftReturnsFirstElementOfList(){
+        $testList = new PhList(1, 2, 3, 4);
+        $this->assertEquals($testList->shift(), 1);
+    }
+    
+    public function testShiftRemovesFirstElementOfList(){
+        $testList = new PhList(1, 2, 3, 4);
+        $testList->shift();
+        
+        $this->assertEquals($testList->first(), 2);
+        $this->assertEquals($testList->length(), 3);
+    }
+    
+    public function testRestReturnsNewListInstance(){
+        $testList = new PhList(1, 2, 3, 4);
+        $newList = $testList->rest();
+        $this->assertEquals(get_class($newList), "PhList");
+    }
+    
+    public function testRestReturnsListWithoutFirstElement(){
+        $testList = new PhList(1, 2, 3, 4);
+        $newList = $testList->rest();
+        $this->assertEquals($newList->first(), 2);
+        $this->assertEquals($newList->length(), 3);
     }
 
 }
