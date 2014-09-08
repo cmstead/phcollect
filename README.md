@@ -1,0 +1,4 @@
+phcollect
+=========
+
+PHP Collections Library
