@@ -9,8 +9,17 @@ class PhList{
         $this->initListValues(func_get_args());
     }
 
+    public static function create($newList){
+        $listReflectionClass = new ReflectionClass('PhList');
+        return $listReflectionClass->newInstanceArgs($newList);
+    }
+
     public function first(){
         return (isset($this->list[0])) ? $this->list[0] : null;
+    }
+    
+    public function get($index){
+        return (isset($this->list[$index])) ? $this->list[$index] : null;
     }
 
     public function last(){
@@ -31,15 +40,21 @@ class PhList{
     }
     
     public function rest(){
-        $listReflectionClass = new ReflectionClass('PhList');
         $restList = array_slice($this->list, 1);
-        return $listReflectionClass->newInstanceArgs($restList);
+        return self::create($restList);
     }
     
     public function shift(){
         $firstValue = $this->first();
         $this->list = array_slice($this->list, 1);
         return $firstValue;
+    }
+    
+    public function slice($offset, $length=null){
+        $sliceList = ($length != null) 
+            ? array_slice($this->list, $offset, $length) 
+            : array_slice($this->list, $offset);
+        return self::create($sliceList);
     }
 
     public function toArray(){
@@ -55,6 +70,7 @@ class PhList{
             }
         }
     }
+    
 }
 
 ?>

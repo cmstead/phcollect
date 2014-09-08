@@ -124,6 +124,44 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
         $this->assertEquals($newList->first(), 2);
         $this->assertEquals($newList->length(), 3);
     }
+    
+    public function testSliceReturnsNewListInstance(){
+        $testList = new PhList(1, 2, 3, 4);
+        $newList = $testList->slice(1);
+        $this->assertEquals(get_class($newList), "PhList");
+    }
+    
+    public function testSliceReturnsListSlicedAtOffset(){
+        $testList = new PhList(1, 2, 3, 4);
+        $newList = $testList->slice(1);
+        
+        $this->assertEquals($newList->first(), 2);
+        $this->assertEquals($newList->length(), 3);
+    }
+    
+    public function testSliceReturnsListSliceThatEndsAtLength(){
+        $testList = new PhList(1, 2, 3, 4);
+        $newList = $testList->slice(1, 2);
+        
+        $this->assertEquals($newList->first(), 2);
+        $this->assertEquals($newList->last(), 3);
+    }
+    
+    public function testGetReturnsValueAtIndex(){
+        $testList = new PhList(1, 2, 3, 4);
+        $this->assertEquals($testList->get(2), 3);
+    }
+    
+    public function testGetReturnsNullIfIndexIsNotDefined(){
+        $testList = new PhList(1, 2, 3, 4);
+        $this->assertEquals($testList->get(5), null);
+    }
+    
+    public function testPhListActionsAreChainable(){
+        $testList = new PhList(1, 2, 3, 4);
+        $finalOutput = $testList->slice(1, 2)->rest()->last();
+        $this->assertEquals($finalOutput, 3);
+    }
 
 }
 
