@@ -37,6 +37,7 @@ class PhList{
     
     public function push($value){
         array_push($this->list, $value);
+        return $this;
     }
     
     public function rest(){

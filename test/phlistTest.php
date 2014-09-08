@@ -159,8 +159,11 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
     
     public function testPhListActionsAreChainable(){
         $testList = new PhList(1, 2, 3, 4);
-        $finalOutput = $testList->slice(1, 2)->rest()->last();
-        $this->assertEquals($finalOutput, 3);
+        $finalOutput = $testList->push(5)
+                                ->slice(1, 3)
+                                ->rest()
+                                ->last();
+        $this->assertEquals($finalOutput, 4);
     }
 
 }
