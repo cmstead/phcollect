@@ -10,12 +10,12 @@ class PhList{
     }
 
     public function first(){
-        return $this->list[0];
+        return (isset($this->list[0])) ? $this->list[0] : null;
     }
 
     public function last(){
         $lastIndex = sizeof($this->list) - 1;
-        return $this->list[$lastIndex];
+        return ($lastIndex >= 0) ? $this->list[$lastIndex] : null;
     }
     
     public function length(){
