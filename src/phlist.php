@@ -58,6 +58,15 @@ class PhList{
         return self::create($sliceList);
     }
 
+    public function sort(callable $comparator = null){
+        if($comparator == null){
+            sort($this->list);
+        } else {
+            usort($this->list, $comparator);
+        }
+        return $this;
+    }
+
     public function toArray(){
         return $this->list;
     }
