@@ -156,10 +156,44 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
         $testList = new PhList(1, 2, 3, 4);
         $this->assertEquals($testList->get(5), null);
     }
+
+    public function testSortSortsAList(){
+        $testList = new PhList(2, 5, 1, 9, 6, 4);
+        $expectedSet = array(1, 2, 4, 5, 6, 9);
+
+        $testList->sort();
+        $this->assertEquals($testList->toArray(), $expectedSet);
+    }
+
+    public function testSortSortsAListWithAPassedComparator(){
+        $testList = new PhList(2, 9, 1, 5, 6, 4);
+        $expectedSet = array(2, 4, 6, 1, 5, 9);
+
+        $testList->sort(function($a, $b){
+            $direction = 0;
+
+            if($a % 2 == 0 && $b % 2 != 0){
+                $direction = -1;
+            } else if($a % 2 != 0 && $b % 2 == 0){
+                $direction = 1;
+            }
+
+            if($direction == 0 && $a > $b){
+                $direction = 1;
+            } else if($direction == 0 && $a < $b){
+                $direction = -1;
+            }
+
+            return $direction;
+        });
+
+        $this->assertEquals($testList->toArray(), $expectedSet);
+    }
     
     public function testPhListActionsAreChainable(){
-        $testList = new PhList(1, 2, 3, 4);
-        $finalOutput = $testList->push(5)
+        $testList = new PhList(4, 2, 1, 3);
+        $finalOutput = $testList->sort()
+                                ->push(5)
                                 ->slice(1, 3)
                                 ->rest()
                                 ->last();
