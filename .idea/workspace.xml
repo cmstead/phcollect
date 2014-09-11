@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c41354a-ebaa-4a61-855b-976bf539d35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/phlist.php" afterPath="$PROJECT_DIR$/src/phlist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/phlistTest.php" afterPath="$PROJECT_DIR$/test/phlistTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="5c41354a-ebaa-4a61-855b-976bf539d35e" name="Default" comment="" />
     <ignored path="phcollect.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410151742556" ignored="false" />
@@ -30,74 +26,7 @@
     <favorites_list name="phcollect" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="phlistTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/phlistTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="62" selection-start="5158" selection-end="5158" vertical-scroll-proportion="-14.791667">
-              <folding>
-                <element signature="n#testPhListIsInstantiable#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="e#185#291#0" expanded="false" />
-                <element signature="e#226#291#0" expanded="false" />
-                <element signature="n#testPhListInstanceHasToArrayMethod#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testToArrayReturnsAnArray#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testFirstGetsFirstValueOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testFirstReturnsNullIfNoFirstValue#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testLastGetsLastValueOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testLastReturnsNullIfArrayIsEmpty#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testLengthReturnsCountOfListElements#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testPhListIsInstantiableWithASingleValue#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testPhListIsInstantiableWithMultipleValues#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testPushAddsValueToEndOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testPushThrowsErrorIfNoValueIsProvided#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="e#2219#2333#0" expanded="false" />
-                <element signature="e#2265#2333#0" expanded="false" />
-                <element signature="n#testPopReturnsLastElementOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testPopRemovesLastElementOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testShiftReturnsFirstElementOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testShiftRemovesFirstElementOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testRestReturnsNewListInstance#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testRestReturnsListWithoutFirstElement#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testSliceReturnsNewListInstance#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testSliceReturnsListSlicedAtOffset#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testSliceReturnsListSliceThatEndsAtLength#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testGetReturnsValueAtIndex#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testGetReturnsNullIfIndexIsNotDefined#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testSortSortsAList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testSortSortsAListWithAPassedComparator#0;n#PhlistTests#0;n#!!top" expanded="false" />
-                <element signature="n#testPhListActionsAreChainable#0;n#PhlistTests#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phlist.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/phlist.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="46" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.6635514">
-              <folding>
-                <element signature="n#__construct#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#create#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#first#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#get#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#last#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#length#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#pop#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#push#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#rest#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#shift#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#slice#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#sort#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#toArray#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="n#initListValues#0;n#PhList#0;n#!!top" expanded="false" />
-                <element signature="e#1892#2033#0" expanded="false" />
-                <element signature="e#1923#2023#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -319,9 +248,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/phlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="46" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.6635514">
+          <folding>
+            <element signature="n#__construct#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#create#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#first#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#get#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#last#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#length#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#pop#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#push#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#rest#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#shift#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#slice#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#sort#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#toArray#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="n#initListValues#0;n#PhList#0;n#!!top" expanded="false" />
+            <element signature="e#1892#2033#0" expanded="false" />
+            <element signature="e#1923#2023#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/phlistTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="62" selection-start="5158" selection-end="5158" vertical-scroll-proportion="-14.791667">
+        <state line="167" column="62" selection-start="5158" selection-end="5158" vertical-scroll-proportion="0.6635514">
           <folding>
             <element signature="n#testPhListIsInstantiable#0;n#PhlistTests#0;n#!!top" expanded="false" />
             <element signature="e#185#291#0" expanded="false" />
@@ -353,30 +306,6 @@
             <element signature="n#testSortSortsAList#0;n#PhlistTests#0;n#!!top" expanded="false" />
             <element signature="n#testSortSortsAListWithAPassedComparator#0;n#PhlistTests#0;n#!!top" expanded="false" />
             <element signature="n#testPhListActionsAreChainable#0;n#PhlistTests#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/phlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="46" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.6635514">
-          <folding>
-            <element signature="n#__construct#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#create#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#first#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#get#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#last#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#length#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#pop#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#push#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#rest#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#shift#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#slice#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#sort#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#toArray#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#initListValues#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="e#1892#2033#0" expanded="false" />
-            <element signature="e#1923#2023#0" expanded="false" />
           </folding>
         </state>
       </provider>
