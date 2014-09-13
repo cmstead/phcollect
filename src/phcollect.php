@@ -1,5 +1,18 @@
 <?php
 
+$localDirectory = dirname(__FILE__);
+
+$collectionFiles = array(
+    "PhCollectionInterface",
+    "PhTuple",
+    "PhList",
+    "PhMap"
+);
+
+foreach($collectionFiles as $name){
+    require_once($localDirectory . "/" . $name . ".php");
+}
+
 class PhCollect{
 
     public static function phtuple(){

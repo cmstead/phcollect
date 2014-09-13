@@ -1,7 +1,7 @@
 <?php
 
-require_once("../src/PhCollectionInterface.php");
-require_once("../src/PhTuple.php");
+$localDirectory = dirname(__FILE__);
+require_once($localDirectory . "/../src/PhCollect.php");
 
 class PhTupleTest extends PHPUnit_Framework_TestCase{
 

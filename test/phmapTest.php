@@ -1,9 +1,7 @@
 <?php
 
-require_once("../src/PhCollectionInterface.php");
-require_once("../src/PhCollect.php");
-require_once("../src/PhTuple.php");
-require_once("../src/PhMap.php");
+$localDirectory = dirname(__FILE__);
+require_once($localDirectory . "/../src/PhCollect.php");
 
 class PhMapTests extends PHPUnit_Framework_TestCase{
 

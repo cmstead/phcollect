@@ -1,6 +1,7 @@
 <?php
 
-require_once("../src/PhCollectionInterface.php");
+$localDirectory = dirname(__FILE__);
+require_once($localDirectory . "/../src/PhCollect.php");
 
 class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
 

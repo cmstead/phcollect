@@ -6,7 +6,8 @@ class PhMap extends PhCollectionInterface{
         $this->initCollectionValues(func_get_args());
     }
 
-    public function create($newMap){
+    public function create($valueArray){
+        $newMap = $this->buildTupleArray($valueArray);
         $this->build(get_class($this), $newMap);
     }
 
@@ -21,6 +22,15 @@ class PhMap extends PhCollectionInterface{
         foreach($args as $tuple){
             list($key, $value) = $tuple->toArray();
             $this->_collection[$key] = $value;
+        }
+    }
+
+    //Convert an associative array into a set of key/value tuples
+    protected function buildTupleArray($valueArray){
+        $tupleArray = array();
+        foreach($valueArray as $key=>$value){
+            $newTuple = PHC::phtuple($key, $value);
+            array_push($tupleArray, $newTuple);
         }
     }
 }
