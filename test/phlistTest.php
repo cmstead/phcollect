@@ -1,8 +1,10 @@
 <?php
 
-require_once("../src/phlist.php");
+require_once("../src/PhCollectionInterface.php");
+require_once("../src/PhTuple.php");
+require_once("../src/PhList.php");
 
-class PhlistTests extends PHPUnit_Framework_TestCase{
+class PhListTests extends PHPUnit_Framework_TestCase{
 
     public function testPhListIsInstantiable(){
         $errorThrown = false;
@@ -22,38 +24,6 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
         $this->assertEquals(method_exists($testList, "toArray"), true);
     }
 
-    public function testToArrayReturnsAnArray(){
-        $testList = new PhList();
-        $returnedValue = $testList->toArray();
-
-        $this->assertEquals(gettype($returnedValue), "array");
-    }
-    
-    public function testFirstGetsFirstValueOfList(){
-        $testList = new PhList(1, 2, 3, 4);
-        $this->assertEquals($testList->first(), 1);
-    }
-    
-    public function testFirstReturnsNullIfNoFirstValue(){
-        $testList = new PhList();
-        $this->assertEquals($testList->first(), null);
-    }
-    
-    public function testLastGetsLastValueOfList(){
-        $testList = new PhList(1, 2, 3, 4);
-        $this->assertEquals($testList->last(), 4);
-    }
-    
-    public function testLastReturnsNullIfArrayIsEmpty(){
-        $testList = new PhList();
-        $this->assertEquals($testList->last(), null);
-    }
-    
-    public function testLengthReturnsCountOfListElements(){
-        $testList = new PhList(1, 2, 3, 4);
-        $this->assertEquals($testList->length(), 4);
-    }
-    
     public function testPhListIsInstantiableWithASingleValue(){
         $testList = new PhList("test value 1");
         $this->assertEquals($testList->length(), 1);
@@ -112,19 +82,6 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
         $this->assertEquals($testList->length(), 3);
     }
     
-    public function testRestReturnsNewListInstance(){
-        $testList = new PhList(1, 2, 3, 4);
-        $newList = $testList->rest();
-        $this->assertEquals(get_class($newList), "PhList");
-    }
-    
-    public function testRestReturnsListWithoutFirstElement(){
-        $testList = new PhList(1, 2, 3, 4);
-        $newList = $testList->rest();
-        $this->assertEquals($newList->first(), 2);
-        $this->assertEquals($newList->length(), 3);
-    }
-    
     public function testSliceReturnsNewListInstance(){
         $testList = new PhList(1, 2, 3, 4);
         $newList = $testList->slice(1);
@@ -147,16 +104,6 @@ class PhlistTests extends PHPUnit_Framework_TestCase{
         $this->assertEquals($newList->last(), 3);
     }
     
-    public function testGetReturnsValueAtIndex(){
-        $testList = new PhList(1, 2, 3, 4);
-        $this->assertEquals($testList->get(2), 3);
-    }
-    
-    public function testGetReturnsNullIfIndexIsNotDefined(){
-        $testList = new PhList(1, 2, 3, 4);
-        $this->assertEquals($testList->get(5), null);
-    }
-
     public function testSortSortsAList(){
         $testList = new PhList(2, 5, 1, 9, 6, 4);
         $expectedSet = array(1, 2, 4, 5, 6, 9);

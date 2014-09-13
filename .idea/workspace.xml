@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c41354a-ebaa-4a61-855b-976bf539d35e" name="Default" comment="" />
+    <list default="true" id="5c41354a-ebaa-4a61-855b-976bf539d35e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/phlistTest.php" afterPath="$PROJECT_DIR$/test/phlistTest.php" />
+    </list>
     <ignored path="phcollect.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410151742556" ignored="false" />
+    <file path="/Dummy.txt" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410585564060" ignored="false" />
     <file path="/phcollect.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410152117267" ignored="false" />
-    <file path="/phlist.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410235150633" ignored="false" />
-    <file path="/phlistTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410235409981" ignored="false" />
+    <file path="/phlist.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410585870441" ignored="false" />
+    <file path="/phlistTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410622486994" ignored="false" />
+    <file path="/Applications/MAMP/htdocs/IndieoopApp/app/View/Elements/reviews/view.ctp" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410585615669" ignored="false" />
+    <file path="/phCollectionInterface.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410587608716" ignored="false" />
+    <file path="/phmap.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410587827136" ignored="false" />
+    <file path="/phmapTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410622493280" ignored="false" />
+    <file path="/a.dummy" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410622339634" ignored="false" />
+    <file path="/phtupleTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623113925" ignored="false" />
+    <file path="/PhTuple.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623942695" ignored="false" />
+    <file path="/PhCollectionInterface.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623668422" ignored="false" />
+    <file path="/PhList.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623742055" ignored="false" />
+    <file path="/PhMap.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623773846" ignored="false" />
+    <file path="/phcollectioninterfaceTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410624860796" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +39,28 @@
     <favorites_list name="phcollect" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="phcollectioninterfaceTest.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/phcollectioninterfaceTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="60" selection-start="841" selection-end="841" vertical-scroll-proportion="0.6728972">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phmapTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/phmapTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="-5.625">
+              <folding>
+                <element signature="n#testPhMapIsInstantiable#0;n#PhMapTests#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -45,8 +79,17 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/phcollect.php" />
+        <option value="$PROJECT_DIR$/src/phCollectionInterface.php" />
         <option value="$PROJECT_DIR$/src/phlist.php" />
+        <option value="$PROJECT_DIR$/src/phmap.php" />
+        <option value="$PROJECT_DIR$/src/PhCollectionInterface.php" />
+        <option value="$PROJECT_DIR$/src/PhMap.php" />
+        <option value="$PROJECT_DIR$/src/PhList.php" />
+        <option value="$PROJECT_DIR$/src/PhTuple.php" />
         <option value="$PROJECT_DIR$/test/phlistTest.php" />
+        <option value="$PROJECT_DIR$/test/phtupleTest.php" />
+        <option value="$PROJECT_DIR$/test/phcollectioninterfaceTest.php" />
+        <option value="$PROJECT_DIR$/test/phmapTest.php" />
       </list>
     </option>
   </component>
@@ -138,12 +181,15 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="Configurable.PHP.PHPUnit" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
     <list size="0" />
@@ -159,25 +205,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1260" height="705" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24958813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25370675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -241,72 +287,93 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/phcollect.php">
+    <entry file="file://$PROJECT_DIR$/src/PhCollect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="4" selection-start="29" selection-end="29" vertical-scroll-proportion="0.11214953">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/phlist.php">
+    <entry file="file://$PROJECT_DIR$/src/PhMap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="46" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.6635514">
+        <state line="14" column="2" selection-start="240" selection-end="240" vertical-scroll-proportion="-8.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="38" selection-end="38" vertical-scroll-proportion="0.11214953">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhTuple.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="617" selection-end="617" vertical-scroll-proportion="0.6168224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhCollectionInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="36" selection-start="105" selection-end="105" vertical-scroll-proportion="0.1682243">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/phmapTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="-5.625">
           <folding>
-            <element signature="n#__construct#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#create#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#first#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#get#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#last#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#length#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#pop#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#push#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#rest#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#shift#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#slice#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#sort#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#toArray#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="n#initListValues#0;n#PhList#0;n#!!top" expanded="false" />
-            <element signature="e#1892#2033#0" expanded="false" />
-            <element signature="e#1923#2023#0" expanded="false" />
+            <element signature="n#testPhMapIsInstantiable#0;n#PhMapTests#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/phtupleTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="0" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.53271025">
+          <folding>
+            <element signature="n#testTupleIsInstantiable#0;n#PhTupleTest#0;n#!!top" expanded="false" />
+            <element signature="n#testTupleIsInstantiableWithOneArgument#0;n#PhTupleTest#0;n#!!top" expanded="false" />
+            <element signature="n#testFirstGetsFirstValueOfList#0;n#PhTupleTest#0;n#!!top" expanded="false" />
+            <element signature="n#testFirstReturnsNullIfNoFirstValue#0;n#PhTupleTest#0;n#!!top" expanded="false" />
+            <element signature="n#testLastGetsLastValueOfList#0;n#PhTupleTest#0;n#!!top" expanded="false" />
+            <element signature="n#testLastReturnsNullIfArrayIsEmpty#0;n#PhTupleTest#0;n#!!top" expanded="false" />
+            <element signature="n#testRestReturnsNewListInstance#0;n#PhTupleTest#0;n#!!top" expanded="false" />
+            <element signature="n#testRestReturnsListWithoutFirstElement#0;n#PhTupleTest#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/phlistTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="62" selection-start="5158" selection-end="5158" vertical-scroll-proportion="0.6635514">
+        <state line="106" column="0" selection-start="3151" selection-end="3151" vertical-scroll-proportion="0.95327103">
           <folding>
-            <element signature="n#testPhListIsInstantiable#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="e#185#291#0" expanded="false" />
-            <element signature="e#226#291#0" expanded="false" />
-            <element signature="n#testPhListInstanceHasToArrayMethod#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testToArrayReturnsAnArray#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testFirstGetsFirstValueOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testFirstReturnsNullIfNoFirstValue#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testLastGetsLastValueOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testLastReturnsNullIfArrayIsEmpty#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testLengthReturnsCountOfListElements#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testPhListIsInstantiableWithASingleValue#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testPhListIsInstantiableWithMultipleValues#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testPushAddsValueToEndOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testPushThrowsErrorIfNoValueIsProvided#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="e#2219#2333#0" expanded="false" />
-            <element signature="e#2265#2333#0" expanded="false" />
-            <element signature="n#testPopReturnsLastElementOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testPopRemovesLastElementOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testShiftReturnsFirstElementOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testShiftRemovesFirstElementOfList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testRestReturnsNewListInstance#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testRestReturnsListWithoutFirstElement#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testSliceReturnsNewListInstance#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testSliceReturnsListSlicedAtOffset#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testSliceReturnsListSliceThatEndsAtLength#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testGetReturnsValueAtIndex#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testGetReturnsNullIfIndexIsNotDefined#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testSortSortsAList#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testSortSortsAListWithAPassedComparator#0;n#PhlistTests#0;n#!!top" expanded="false" />
-            <element signature="n#testPhListActionsAreChainable#0;n#PhlistTests#0;n#!!top" expanded="false" />
+            <element signature="n#testPhListIsInstantiable#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testPhListInstanceHasToArrayMethod#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testPhListIsInstantiableWithASingleValue#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testPhListIsInstantiableWithMultipleValues#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testPushAddsValueToEndOfList#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testPushThrowsErrorIfNoValueIsProvided#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testPopReturnsLastElementOfList#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testPopRemovesLastElementOfList#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testShiftReturnsFirstElementOfList#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testShiftRemovesFirstElementOfList#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testSliceReturnsNewListInstance#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testSliceReturnsListSlicedAtOffset#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testSliceReturnsListSliceThatEndsAtLength#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testSortSortsAList#0;n#PhListTests#0;n#!!top" expanded="false" />
+            <element signature="n#testSortSortsAListWithAPassedComparator#0;n#PhListTests#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/phcollectioninterfaceTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="60" selection-start="841" selection-end="841" vertical-scroll-proportion="0.6728972">
+          <folding />
         </state>
       </provider>
     </entry>
