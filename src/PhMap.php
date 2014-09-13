@@ -10,11 +10,17 @@ class PhMap extends PhCollectionInterface{
         $this->build(get_class($this), $newMap);
     }
 
+    public function set($tuple){
+        list($key, $value) = $tuple->toArray();
+        $this->_collection[$key] = $value;
+    }
+
     /* Protected functions */
 
     protected function initCollectionValues($args){
-        foreach($args as $argument){
-            $this->_collection[$argument->get(0)] = $argument->get[1];
+        foreach($args as $tuple){
+            list($key, $value) = $tuple->toArray();
+            $this->_collection[$key] = $value;
         }
     }
 }
