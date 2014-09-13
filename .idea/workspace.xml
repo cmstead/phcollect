@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c41354a-ebaa-4a61-855b-976bf539d35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/phlistTest.php" afterPath="$PROJECT_DIR$/test/phlistTest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/phcollect.php" afterPath="$PROJECT_DIR$/src/PhCollect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PhTuple.php" afterPath="$PROJECT_DIR$/src/PhTuple.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="phcollect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,11 +18,12 @@
     <file path="/phmapTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410622493280" ignored="false" />
     <file path="/a.dummy" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410622339634" ignored="false" />
     <file path="/phtupleTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623113925" ignored="false" />
-    <file path="/PhTuple.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623942695" ignored="false" />
+    <file path="/PhTuple.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410626114527" ignored="false" />
     <file path="/PhCollectionInterface.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623668422" ignored="false" />
     <file path="/PhList.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623742055" ignored="false" />
     <file path="/PhMap.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410623773846" ignored="false" />
     <file path="/phcollectioninterfaceTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410624860796" ignored="false" />
+    <file path="/PhCollect.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410625941650" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,21 +43,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="phcollectioninterfaceTest.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/phcollectioninterfaceTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="60" selection-start="841" selection-end="841" vertical-scroll-proportion="0.6728972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="phmapTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/phmapTest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="19" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="-5.625">
               <folding>
                 <element signature="n#testPhMapIsInstantiable#0;n#PhMapTests#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhTuple.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PhTuple.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="5" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.8411215">
+              <folding>
+                <element signature="n#initCollectionValues#0;n#PhTuple#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,11 +90,12 @@
         <option value="$PROJECT_DIR$/src/PhCollectionInterface.php" />
         <option value="$PROJECT_DIR$/src/PhMap.php" />
         <option value="$PROJECT_DIR$/src/PhList.php" />
-        <option value="$PROJECT_DIR$/src/PhTuple.php" />
         <option value="$PROJECT_DIR$/test/phlistTest.php" />
         <option value="$PROJECT_DIR$/test/phtupleTest.php" />
         <option value="$PROJECT_DIR$/test/phcollectioninterfaceTest.php" />
         <option value="$PROJECT_DIR$/test/phmapTest.php" />
+        <option value="$PROJECT_DIR$/src/PhCollect.php" />
+        <option value="$PROJECT_DIR$/src/PhTuple.php" />
       </list>
     </option>
   </component>
@@ -287,13 +293,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PhCollect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="4" selection-start="29" selection-end="29" vertical-scroll-proportion="0.11214953">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PhMap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="2" selection-start="240" selection-end="240" vertical-scroll-proportion="-8.75">
@@ -308,26 +307,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PhTuple.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="617" selection-end="617" vertical-scroll-proportion="0.6168224">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PhCollectionInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="36" selection-start="105" selection-end="105" vertical-scroll-proportion="0.1682243">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/phmapTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="-5.625">
-          <folding>
-            <element signature="n#testPhMapIsInstantiable#0;n#PhMapTests#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -372,8 +355,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/phcollectioninterfaceTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="60" selection-start="841" selection-end="841" vertical-scroll-proportion="0.6728972">
+        <state line="24" column="60" selection-start="841" selection-end="841" vertical-scroll-proportion="0.5794392">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhCollect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="551" selection-end="551" vertical-scroll-proportion="0.6448598">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/phmapTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="396" selection-end="396" vertical-scroll-proportion="-5.625">
+          <folding>
+            <element signature="n#testPhMapIsInstantiable#0;n#PhMapTests#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhTuple.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="5" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.8411215">
+          <folding>
+            <element signature="n#initCollectionValues#0;n#PhTuple#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

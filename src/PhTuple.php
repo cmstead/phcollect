@@ -30,7 +30,7 @@ class PhTuple extends PhCollectionInterface{
 
     protected function initCollectionValues($args){
         if(sizeof($args)){
-            foreach($args as $key=>$argument){
+            foreach($args as $argument){
                 array_push($this->_collection, $argument);
             }
         }
