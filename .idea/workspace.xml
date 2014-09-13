@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c41354a-ebaa-4a61-855b-976bf539d35e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PhMap.php" afterPath="$PROJECT_DIR$/src/PhMap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/phmapTest.php" afterPath="$PROJECT_DIR$/test/phmapTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="phcollect.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,6 +22,7 @@
     <file path="/PhMap.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410627518344" ignored="false" />
     <file path="/phcollectioninterfaceTest.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410626851084" ignored="false" />
     <file path="/PhCollect.php" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410625941650" ignored="false" />
+    <file path="/.gitignore" changelist="5c41354a-ebaa-4a61-855b-976bf539d35e" time="1410627877942" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,16 +57,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhMap.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PhMap.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PhMap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="2" selection-start="608" selection-end="608" vertical-scroll-proportion="0.42056075">
+            <state line="27" column="2" selection-start="608" selection-end="608" vertical-scroll-proportion="-9.375">
               <folding>
                 <element signature="n#__construct#0;n#PhMap#0;n#!!top" expanded="false" />
                 <element signature="n#create#0;n#PhMap#0;n#!!top" expanded="false" />
                 <element signature="n#set#0;n#PhMap#0;n#!!top" expanded="false" />
                 <element signature="n#initCollectionValues#0;n#PhMap#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,6 +111,7 @@
         <option value="$PROJECT_DIR$/test/phcollectioninterfaceTest.php" />
         <option value="$PROJECT_DIR$/src/PhMap.php" />
         <option value="$PROJECT_DIR$/test/phmapTest.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -390,13 +400,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PhMap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="2" selection-start="608" selection-end="608" vertical-scroll-proportion="0.42056075">
+        <state line="27" column="2" selection-start="608" selection-end="608" vertical-scroll-proportion="-9.375">
           <folding>
             <element signature="n#__construct#0;n#PhMap#0;n#!!top" expanded="false" />
             <element signature="n#create#0;n#PhMap#0;n#!!top" expanded="false" />
             <element signature="n#set#0;n#PhMap#0;n#!!top" expanded="false" />
             <element signature="n#initCollectionValues#0;n#PhMap#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
