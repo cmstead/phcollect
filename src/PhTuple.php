@@ -8,8 +8,7 @@ class PhTuple extends PhCollectionInterface{
     }
 
     public function create($newTuple){
-        $collectionReflectionClass = new ReflectionClass(get_class($this));
-        return $collectionReflectionClass->newInstanceArgs($newTuple);
+        return $this->build(get_class($this), $newTuple);
     }
 
     public function first(){

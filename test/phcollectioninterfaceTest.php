@@ -38,6 +38,7 @@ class PhCollection extends PhCollectionInterface{
         return new PhCollection($newCollection);
     }
 
+    protected function initCollectionValues($args){}
 }
 
 ?>
