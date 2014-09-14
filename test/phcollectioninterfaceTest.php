@@ -65,6 +65,32 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals(null, $returnedValue);
     }
 
+    public function testFilterReturnsACollection(){
+        $testCollection = new PhCollection(array());
+        $returnedCollection = $testCollection->filter(function(){});
+
+        $this->assertEquals("PhCollection", get_class($returnedCollection));
+    }
+
+    public function testFilterReturnsMatchingElements(){
+        $testCollection = new PhCollection(array(1, 2, 3, 4));
+        $expectedResult = "2, 4";
+        $returnedCollection = $testCollection->filter(function($value){
+            return $value % 2 == 0;
+        });
+
+        $this->assertEquals($expectedResult, implode(", ", $returnedCollection->toArray()));
+    }
+
+    public function testFilterReturnsEmptyCollectionIfNoElementsMatch(){
+        $testCollection = new PhCollection(array(1, 2, 3, 4));
+        $returnedCollection = $testCollection->filter(function($value){
+            return $value % 5 == 0;
+        });
+
+        $this->assertEquals(0, $returnedCollection->length());
+    }
+
 }
 
 class PhCollection extends PhCollectionInterface{

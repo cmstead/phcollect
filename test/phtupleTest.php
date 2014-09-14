@@ -55,6 +55,31 @@ class PhTupleTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals($newList->length(), 3);
     }
 
+    public function testFoldReturnsNullIfCollectionIsEmpty(){
+        $testTuple = new PhTuple();
+        $returnedValue = $testTuple->fold(function(){});
+
+        $this->assertEquals(null, $returnedValue);
+    }
+
+    public function testFoldPerformsUserOperationOnTwoElementCollection(){
+        $testTuple = new PhTuple(1, 2);
+        $returnedValue = $testTuple->fold(function($oldResult, $nextValue){
+            return $oldResult * $nextValue;
+        });
+
+        $this->assertEquals(2, $returnedValue);
+    }
+
+    public function testFoldPerformsUserOperationOnNElements(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+        $result = $testTuple->fold(function($operand1, $operand2){
+            return $operand1 * $operand2;
+        });
+
+        $this->assertEquals(24, $result);
+    }
+
 }
 
 ?>

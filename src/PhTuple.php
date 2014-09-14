@@ -15,6 +15,19 @@ class PhTuple extends PhCollectionInterface{
         return (isset($this->_collection[0])) ? $this->_collection[0] : null;
     }
 
+    public function fold(callable $userFn){
+        $result = null;
+
+        if($this->length() > 1){
+            for($i = 1; $i < $this->length(); $i++){
+                $result = ($result == null) ? $this->first() : $result;
+                $result = $userFn($result, $this->nth($i));
+            }
+        }
+
+        return $result;
+    }
+
     public function last(){
         $lastIndex = sizeof($this->_collection) - 1;
         return ($lastIndex >= 0) ? $this->_collection[$lastIndex] : null;

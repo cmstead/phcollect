@@ -7,6 +7,18 @@ abstract class PhCollectionInterface{
     public abstract function create($newCollection);
     protected abstract function initCollectionValues($collectionValues);
 
+    public function filter(callable $comparator){
+        $finalOutput = array();
+
+        foreach($this->_collection as $key=>$value){
+            if($comparator($value)){
+                $finalOutput[$key] = $value;
+            }
+        }
+
+        return $this->create($finalOutput);
+    }
+
     public function find(callable $comparator){
         $finalValue = null;
 

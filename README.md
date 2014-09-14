@@ -8,6 +8,8 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 **Collection Interface**
 
 - Core functions defined here
+- filter(callable $comparator)
+    - Returns collection of all elements in original collection which $locator returns true for
 - find(callable $locator)
     - Returns first element $locator returns true for
 - get(Mixed $index)
@@ -23,6 +25,8 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 
 - first()
     - Returns first element in tuple
+- fold(callable $userFn)
+    - Returns the result of $userFn being applied serially, left to right, to each element using the previous result (like adding across all elements)
 - last
     - Returns last element in the tuple
 - nth(int $index)
@@ -49,10 +53,3 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Tuple must be an ordered pair representing a key and a value
 
 ##Upcoming development
-
-**Collection Interface**
-
-- filter(callable $locator)
-    - Returns collection of all elements in original collection which $locator returns true for
-- fold(callable $userFn)
-    - Returns the result of $userFn being applied serially, left to right, to each element using the previous result (like adding across all elements)
