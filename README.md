@@ -3,7 +3,7 @@ phcollect
 
 PhCollect is a collections library for PHP which wraps PHP arrays and provides specialized, chainable, functions for different collection types.  This library is extensible and inheritable. All collections are immutable by default, though extended collections like lists and maps have functions that allow for collection mutation.
 
-##Current development
+##Current functionality
 
 **Collection Interface**
 
