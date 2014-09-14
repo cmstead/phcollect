@@ -8,10 +8,14 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 **Collection Interface**
 
 - Core functions defined here
+- find(callable $locator)
+    - Returns first element $locator returns true for
 - get(Mixed $index)
     - Returns collection value at the provided index
 - length()
     - Returns count of elements in collection
+- map(callable $modifier)
+    - Returns new collection with $modifier function applied to all members of original collection
 - toArray()
     - Returns a standard PHP associative of collection key/value pairs
 
@@ -50,9 +54,5 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 
 - filter(callable $locator)
     - Returns collection of all elements in original collection which $locator returns true for
-- find(callable $locator)
-    - Returns first element $locator returns true for
 - fold(callable $userFn)
     - Returns the result of $userFn being applied serially, left to right, to each element using the previous result (like adding across all elements)
-- map(callable $modifier)
-    - Returns new collection with $modifier function applied to all members of original collection
