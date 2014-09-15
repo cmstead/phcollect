@@ -184,9 +184,21 @@ echo implode(", ", $exampleList->toArray());
       <li>returns identity collection</li>
     </ul>
   </li>
+  <li>intersect(array/collection $dataset [...])
+    <ul>
+      <li>Variable arity -- accepts 1+ arrays or collections to perform intersection with</li>
+      <li>Returns original collection with intersection applied</li>
+    </ul>
+  </li>
   <li>partial(callable $userFn[, Mixed arguments])
     <ul>
       <li>Performs a right-partial application of passed values on provided function</li>
+    </ul>
+  </li>
+  <li>union(array/collection $dataset [...])
+    <ul>
+      <li>Variable arity -- accepts 1+ arrays or collections to perform union with</li>
+      <li>Returns original collection with union applied</li>
     </ul>
   </li>
 </ul>
