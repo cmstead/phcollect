@@ -15,7 +15,7 @@ abstract class PhCollectionInterface{
         return PhCollect::find($this->_collection, $comparator);
     }
     
-    public function forEvery(callable $userFn){
+    public function forevery(callable $userFn){
         PHC::forevery($this->_collection, $userFn);
         return $this;
     }
@@ -34,6 +34,11 @@ abstract class PhCollectionInterface{
 
     public function map(callable $userFn){
         return $this->create(PhCollect::map($this->_collection, $userFn));
+    }
+    
+    public function partial(){
+        $partial = forward_static_call_array(array("PHC", "partial"), func_get_args());
+        return $partial($this);
     }
 
     public function toArray(){

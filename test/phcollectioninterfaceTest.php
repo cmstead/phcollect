@@ -144,6 +144,49 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
         
         $this->assertEquals($testCollection, $returnedCollection);
     }
+    
+    public function testPartialReturnsAFunction(){
+        $partial = PHC::partial(function(){});
+        
+        $this->assertEquals(true, is_callable($partial));
+    }
+    
+    public function testPartialApplicationAppliesOneVariable(){
+        $add = function($a, $b){
+            return $a + $b;
+        };
+        
+        $addFive = PHC::partial($add, 5);
+        
+        $this->assertEquals(7, $addFive(2));
+    }
+    
+    public function testPartialApplicationAppliesMultipleVariables(){
+        $add = function(){
+            $args = func_get_args();
+            $sum = 0;
+
+            foreach($args as $value){
+                $sum += $value;
+            }
+
+            return $sum;
+        };
+        
+        $addExtendible = PHC::partial($add, 1, 2, 3);
+        
+        $this->assertEquals(15, $addExtendible(4, 5));
+    }
+    
+    public function testPartialApplicationOperatesOnCallingCollection(){
+        $testCollection = new PhCollection(array());
+        
+        $returnedValue = $testCollection->partial(function($collection){
+            return $collection;
+        });
+        
+        $this->assertEquals($testCollection, $returnedValue);
+    }
 
 }
 

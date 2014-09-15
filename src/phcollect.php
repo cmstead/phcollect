@@ -59,6 +59,14 @@ class PhCollect{
         return $finalValue;
     }
     
+    public static function forevery($dataSet, callable $userFn){
+        foreach($dataSet as $value){
+            if($userFn($value) === false){
+                break;
+            }
+        }
+    }
+
     public static function map($dataSet, callable $userFn){
         $finalSet = array();
 
@@ -74,13 +82,15 @@ class PhCollect{
         return $value;
     }
     
-    public static function forevery($dataSet, callable $userFn){
-        foreach($dataSet as $value){
-            if($userFn($value) === false){
-                break;
-            }
-        }
+    public static function partial(callable $userFn){
+        $functionArgs = array_slice(func_get_args(), 1);
+        
+        return function() use ($userFn, $functionArgs) {
+            $allArgs = array_merge($functionArgs, func_get_args());
+            return call_user_func_array($userFn, $allArgs);
+        };
     }
+    
 }
 
 class_alias("PhCollect", "PHC");

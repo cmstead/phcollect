@@ -23,6 +23,8 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Returns count of elements in collection
 - map(callable $modifier)
     - Returns new collection with $modifier function applied to all members of original collection
+- partial(callable $userFn[, Mixed arguments])
+    - Performs a right-partial application of passed values on provided function
 - toArray()
     - Returns a standard PHP associative of collection key/value pairs
 
@@ -62,8 +64,6 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 - intersect(array/collection $dataset [...])
     - Variable arity -- accepts 1+ arrays or collections to perform intersection with
     - Returns original collection with intersection applied
-- partial(callable $userFn[, Mixed arguments])
-    - Performs a right-partial application of passed values on provided function
 - union(array/collection $dataset [...])
     - Variable arity -- accepts 1+ arrays or collections to perform union with
     - Returns original collection with union applied
