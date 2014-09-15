@@ -8,28 +8,11 @@ abstract class PhCollectionInterface{
     protected abstract function initCollectionValues($collectionValues);
 
     public function filter(callable $comparator){
-        $finalOutput = array();
-
-        foreach($this->_collection as $key=>$value){
-            if($comparator($value)){
-                $finalOutput[$key] = $value;
-            }
-        }
-
-        return $this->create($finalOutput);
+        return $this->create(PhCollect::filter($this->_collection, $comparator));
     }
 
     public function find(callable $comparator){
-        $finalValue = null;
-
-        foreach($this->_collection as $value){
-            if($comparator($value)){
-                $finalValue = $value;
-                break;
-            }
-        }
-
-        return $finalValue;
+        return PhCollect::find($this->_collection, $comparator);
     }
 
     public function get($index){
@@ -41,14 +24,7 @@ abstract class PhCollectionInterface{
     }
 
     public function map(callable $userFn){
-        $dataSet = array();
-
-        foreach($this->_collection as $key=>$value){
-            $finalValue = $userFn($value);
-            $dataSet[$key] = $finalValue;
-        }
-
-        return $this->create($dataSet);
+        return $this->create(PhCollect::map($this->_collection, $userFn));
     }
 
     public function toArray(){

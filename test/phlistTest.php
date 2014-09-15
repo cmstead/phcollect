@@ -1,7 +1,7 @@
 <?php
 
 $localDirectory = dirname(__FILE__);
-require_once($localDirectory . "/../src/PhCollect.php");
+require_once($localDirectory . "/../src/phcollect.php");
 
 class PhListTests extends PHPUnit_Framework_TestCase{
 

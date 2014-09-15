@@ -53,3 +53,11 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Tuple must be an ordered pair representing a key and a value
 
 ##Upcoming development
+
+- foreach(callable $userFn)
+    - Performs user defined function on each element
+    - escapable loop by returning false
+- identity()
+    - returns identity collection
+- partial(callable $userFn[, Mixed arguments])
+    - Performs a right-partial application of passed values on provided function
