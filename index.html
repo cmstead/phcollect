@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>PhCollect by cmstead</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>PhCollect</h1>
+        <p>Sane collection objects for PHP</p>
+
+        <p class="view"><a href="https://github.com/cmstead/phcollect">View the Project on GitHub <small>cmstead/phcollect</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/cmstead/phcollect/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/cmstead/phcollect/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/cmstead/phcollect">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>PhCollect is a collections library for PHP which wraps PHP arrays and provides specialized, chainable, functions for different collection types.  This library is extensible and inheritable. All collections are immutable by default, though extended collections like lists and maps have functions that allow for collection mutation.</p>
+
+<h2>
+<a name="current-functionality" class="anchor" href="#current-functionality"><span class="octicon octicon-link"></span></a>Current functionality</h2>
+
+<p><strong>Collection Interface</strong></p>
+
+<ul>
+<li>Core functions defined here</li>
+<li>filter(callable $comparator)
+
+<ul>
+<li>Returns collection of all elements in original collection which $locator returns true for</li>
+</ul>
+</li>
+<li>find(callable $locator)
+
+<ul>
+<li>Returns first element $locator returns true for</li>
+</ul>
+</li>
+<li>get(Mixed $index)
+
+<ul>
+<li>Returns collection value at the provided index</li>
+</ul>
+</li>
+<li>length()
+
+<ul>
+<li>Returns count of elements in collection</li>
+</ul>
+</li>
+<li>map(callable $modifier)
+
+<ul>
+<li>Returns new collection with $modifier function applied to all members of original collection</li>
+</ul>
+</li>
+<li>toArray()
+
+<ul>
+<li>Returns a standard PHP associative of collection key/value pairs</li>
+</ul>
+</li>
+</ul><p><strong>Tuples</strong></p>
+
+<ul>
+<li>first()
+
+<ul>
+<li>Returns first element in tuple</li>
+</ul>
+</li>
+<li>fold(callable $userFn)
+
+<ul>
+<li>Returns the result of $userFn being applied serially, left to right, to each element using the previous result (like adding across all elements)</li>
+</ul>
+</li>
+<li>last
+
+<ul>
+<li>Returns last element in the tuple</li>
+</ul>
+</li>
+<li>nth(int $index)
+
+<ul>
+<li>Returns nth element in the tuple</li>
+</ul>
+</li>
+<li>rest()
+
+<ul>
+<li>Returns new tuple containing all elements but the first of the original collection</li>
+</ul>
+</li>
+</ul><p><strong>Lists</strong></p>
+
+<ul>
+<li>Inherits from tuple</li>
+<li>pop()
+
+<ul>
+<li>Pops last element from list and returns it</li>
+</ul>
+</li>
+<li>push(Mixed $value)
+
+<ul>
+<li>Pushes new value on to the end of the list. Returns the updated list</li>
+</ul>
+</li>
+<li>slice(int $offset[, int $length])
+
+<ul>
+<li>Returns a list containing a subset of the elements of the original based on the offset and length passed</li>
+</ul>
+</li>
+<li>sort([callable $comparator])
+
+<ul>
+<li>Sorts list elements either in PHP sort standard order or using a comparator function</li>
+</ul>
+</li>
+</ul><p><strong>Maps</strong></p>
+
+<ul>
+<li>set(PhTuple $tuple)
+
+<ul>
+<li>Adds key/value pair to map</li>
+<li>Tuple must be an ordered pair representing a key and a value</li>
+</ul>
+</li>
+</ul><h2>
+<a name="upcoming-development" class="anchor" href="#upcoming-development"><span class="octicon octicon-link"></span></a>Upcoming development</h2>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/cmstead">cmstead</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
