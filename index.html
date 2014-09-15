@@ -30,6 +30,32 @@
       <section>
         <p>PhCollect is a collections library for PHP which wraps PHP arrays and provides specialized, chainable, functions for different collection types.  This library is extensible and inheritable. All collections are immutable by default, though extended collections like lists and maps have functions that allow for collection mutation.</p>
 
+
+          <div>
+              <h2>An example</h2>
+              <p>
+                  Though this example is rather contrived, you get the idea of what can be done.
+              </p>
+              <pre>
+require_once("phcollect.php");
+
+$exampleList = PHC::phlist(1, 2, 3, 4, 5, 6);
+
+echo $exampleList->push(9)
+                 ->map(function($value){
+                    return $value * 8;
+                 })
+                 ->filter(function($value){
+                    return $value % 6;
+                 })
+                 ->nth(1);
+//output: 48
+
+echo implode(", ", $exampleList->toArray());
+//output: 1, 2, 3, 4, 5, 6, 9
+              </pre>
+          </div>
+
 <h2>
 <a name="current-functionality" class="anchor" href="#current-functionality"><span class="octicon octicon-link"></span></a>Current functionality</h2>
 
