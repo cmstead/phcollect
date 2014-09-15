@@ -12,6 +12,11 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Returns collection of all elements in original collection which $locator returns true for
 - find(callable $locator)
     - Returns first element $locator returns true for
+- forevery(callable $userFn)
+    - Performs user defined function on each element
+    - escapable loop by returning false
+- identity()
+    - returns identity collection
 - get(Mixed $index)
     - Returns collection value at the provided index
 - length()
@@ -54,10 +59,11 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 
 ##Upcoming development
 
-- foreach(callable $userFn)
-    - Performs user defined function on each element
-    - escapable loop by returning false
-- identity()
-    - returns identity collection
+- intersect(array/collection $dataset [...])
+    - Variable arity -- accepts 1+ arrays or collections to perform intersection with
+    - Returns original collection with intersection applied
 - partial(callable $userFn[, Mixed arguments])
     - Performs a right-partial application of passed values on provided function
+- union(array/collection $dataset [...])
+    - Variable arity -- accepts 1+ arrays or collections to perform union with
+    - Returns original collection with union applied

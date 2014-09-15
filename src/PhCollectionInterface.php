@@ -14,9 +14,18 @@ abstract class PhCollectionInterface{
     public function find(callable $comparator){
         return PhCollect::find($this->_collection, $comparator);
     }
+    
+    public function forEvery(callable $userFn){
+        PHC::forevery($this->_collection, $userFn);
+        return $this;
+    }
 
     public function get($index){
         return (isset($this->_collection[$index])) ? $this->_collection[$index] : null;
+    }
+    
+    public function identity(){
+        return $this;
     }
 
     public function length(){

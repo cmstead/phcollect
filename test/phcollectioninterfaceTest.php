@@ -90,6 +90,60 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
 
         $this->assertEquals(0, $returnedCollection->length());
     }
+    
+    public function testIdentityReturnsPassedObject(){
+        $testCollection = new PhCollection(array());
+        $returnedCollection = PHC::identity($testCollection);
+        $this->assertEquals($testCollection, $returnedCollection);
+    }
+    
+    public function testIdentityReturnsCallingCollection(){
+        $testCollection = new PhCollection(array());
+        $returnedCollection = $testCollection->identity();
+        
+        $this->assertEquals($testCollection, $returnedCollection);
+    }
+    
+    public function testForeveryExecutesForEachArrayElement(){
+        $testArray = array(1, 2);
+        $finalArray = array();
+
+        PHC::forevery($testArray, function ($value) use (&$finalArray){
+            array_push($finalArray, $value * 2);
+        });
+        
+        $this->assertEquals("2, 4", implode(", ", $finalArray));
+    }
+    
+    public function testForeveryExitsWhenFalseIsRetured(){
+        $testArray = array(1, 2);
+        $finalArray = array();
+
+        PHC::forevery($testArray, function ($value) use (&$finalArray){
+            array_push($finalArray, $value * 2);
+            return false;
+        });
+        
+        $this->assertEquals("2", implode(", ", $finalArray));
+    }
+
+    public function testForeveryExecutesForEachCollectionElement(){
+        $testCollection = new PhCollection(array(1, 2));
+        $finalArray = array();
+
+        $testCollection->forevery(function ($value) use (&$finalArray){
+            array_push($finalArray, $value * 2);
+        });
+        
+        $this->assertEquals("2, 4", implode(", ", $finalArray));
+    }
+    
+    public function testForeveryReturnsCallingCollection(){
+        $testCollection = new PhCollection(array(1, 2));
+        $returnedCollection = $testCollection->forevery(function(){});
+        
+        $this->assertEquals($testCollection, $returnedCollection);
+    }
 
 }
 

@@ -69,6 +69,18 @@ class PhCollect{
 
         return $finalSet;
     }
+    
+    public static function identity($value){
+        return $value;
+    }
+    
+    public static function forevery($dataSet, callable $userFn){
+        foreach($dataSet as $value){
+            if($userFn($value) === false){
+                break;
+            }
+        }
+    }
 }
 
 class_alias("PhCollect", "PHC");
