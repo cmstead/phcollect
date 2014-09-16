@@ -33,6 +33,15 @@ class PhList extends PhTuple{
         return $this;
     }
 
+    public function union(){
+        $args = func_get_args();
+        array_push($args, $this->_collection);
+
+        $result = forward_static_call_array(array("PHC", "union"), $args);
+
+        return $this->create($result);
+    }
+
 }
 
 ?>

@@ -90,6 +90,61 @@ class PhCollect{
             return call_user_func_array($userFn, $allArgs);
         };
     }
+
+    public static function union(){
+        $args = array();
+        $result = array();
+
+        foreach(func_get_args() as $arg){
+            if(gettype($arg) != "array" && get_class($arg) == "PhList"){
+                array_push($args, $arg->toArray());
+            } else {
+                array_push($args, $arg);
+            }
+        }
+
+        if(sizeof($args) > 0){
+            sort($args[0]);
+            $result = $args[0];
+        }
+
+        if(sizeof($args) > 1){
+            for($i = 1; $i < sizeof($args); $i++){
+                sort($args[$i]);
+                $result = self::pairUnion($result, $args[$i]);
+            }
+        }
+
+        return $result;
+    }
+
+    /* private helper functions */
+
+    private static function pairUnion($a, $b){
+        $result = array();
+        $i = $j = 0;
+
+        while($i < sizeof($a) && $j < sizeof($b)){
+            if($a[$i] < $b[$j]){
+                array_push($result, $a[$i++]);
+            } else if($a[$i] > $b[$j]) {
+                array_push($result, $b[$j++]);
+            } else {
+                array_push($result, $a[$i]);
+                $i++;
+                $j++;
+            }
+        }
+
+        while($i < sizeof($a)){
+            array_push($result, $a[$i++]);
+        }
+        while($j < sizeof($b)){
+            array_push($result, $b[$j++]);
+        }
+
+        return $result;
+    }
     
 }
 

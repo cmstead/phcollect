@@ -188,6 +188,36 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals($testCollection, $returnedValue);
     }
 
+    public function testUnionReturnsAnArray(){
+        $unionResult = PHC::union();
+
+        $this->assertEquals("array", gettype($unionResult));
+    }
+
+    public function testUnionReturnsSingleArray(){
+        $result = PHC::union(array(1, 2, 3));
+
+        $this->assertEquals("1, 2, 3", implode(", ", $result));
+    }
+
+    public function testUnionReturnsArrayAsUnionOfTwoSortedArrays(){
+        $result = PHC::union(array(1, 2, 3), array(2, 3, 4));
+
+        $this->assertEquals("1, 2, 3, 4", implode(", ", $result));
+    }
+
+    public function testUnionReturnsArrayAsUnionOfTwoUnsortedArrays(){
+        $result = PHC::union(array(3, 2, 1), array(4, 3, 2));
+
+        $this->assertEquals("1, 2, 3, 4", implode(", ", $result));
+    }
+
+    public function testUnionReturnsArrayAsUnionOfMultipleArrays(){
+        $result = PHC::union(array(1, 2), array(2, 3, 4), array(5, 3, 1));
+
+        $this->assertEquals("1, 2, 3, 4, 5", implode(", ", $result));
+    }
+
 }
 
 class PhCollection extends PhCollectionInterface{

@@ -52,6 +52,9 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Returns a list containing a subset of the elements of the original based on the offset and length passed
 - sort([callable $comparator])
     - Sorts list elements either in PHP sort standard order or using a comparator function
+- union(array/collection $dataset [...])
+    - Variable arity -- accepts 1+ arrays or collections to perform union with
+    - Returns original collection with union applied
 
 **Maps**
 
@@ -64,6 +67,3 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 - intersect(array/collection $dataset [...])
     - Variable arity -- accepts 1+ arrays or collections to perform intersection with
     - Returns original collection with intersection applied
-- union(array/collection $dataset [...])
-    - Variable arity -- accepts 1+ arrays or collections to perform union with
-    - Returns original collection with union applied
