@@ -217,6 +217,30 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
 
         $this->assertEquals("1, 2, 3, 4, 5", implode(", ", $result));
     }
+    
+    public function testIntersectReturnsAnArray(){
+        $result = PHC::intersect(array());
+        
+        $this->assertEquals("array", gettype($result));
+    }
+    
+    public function testIntersectReturnsSingleArray(){
+        $result = PHC::intersect(array(1, 2, 3));
+        
+        $this->assertEquals("1, 2, 3", implode(", ", $result));
+    }
+    
+    public function testIntersectReturnsIntersectionOfTwoArrays(){
+        $result = PHC::intersect(array(1, 2, 3), array(2, 3, 4));
+        
+        $this->assertEquals("2, 3", implode(", ", $result));
+    }
+
+    public function testIntersectReturnsIntersectionOfMultiple(){
+        $result = PHC::intersect(array(1, 2, 3), array(2, 3, 4), array(1, 3, 5), array(7, 5, 3));
+        
+        $this->assertEquals("3", implode(", ", $result));
+    }
 
 }
 

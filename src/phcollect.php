@@ -92,33 +92,61 @@ class PhCollect{
     }
 
     public static function union(){
-        $args = array();
-        $result = array();
+        $args = self::sanitizeArgumentList(func_get_args());
+        $result = self::getInitialArgument($args);
+        sort($result);
 
-        foreach(func_get_args() as $arg){
-            if(gettype($arg) != "array" && get_class($arg) == "PhList"){
-                array_push($args, $arg->toArray());
-            } else {
-                array_push($args, $arg);
-            }
-        }
-
-        if(sizeof($args) > 0){
-            sort($args[0]);
-            $result = $args[0];
-        }
-
-        if(sizeof($args) > 1){
-            for($i = 1; $i < sizeof($args); $i++){
-                sort($args[$i]);
-                $result = self::pairUnion($result, $args[$i]);
-            }
+        for($i = 1; $i < sizeof($args); $i++){
+            sort($args[$i]);
+            $result = self::pairUnion($result, $args[$i]);
         }
 
         return $result;
     }
+    
+    public static function intersect(){
+        $args = self::sanitizeArgumentList(func_get_args());
+        $result = self::getInitialArgument($args);
+        sort($result);
+        
+        for($i = 1; $i < sizeof($args); $i++){
+            sort($args[$i]);
+            $result = self::pairIntersect($result, $args[$i]);
+        }
+        
+        return $result;
+    }
 
     /* private helper functions */
+
+    private static function getInitialArgument($args){
+        $initialArgument = array();
+        
+        if(sizeof($args) > 0){
+            $initialArgument = $args[0];
+        }
+        
+        return $initialArgument;
+    }
+
+    private static function pairIntersect($a, $b){
+        $result = array();
+        $i = $j = 0;
+
+        while($i < sizeof($a) && $j < sizeof($b)){
+            if($a[$i] < $b[$j]){
+                $i++;
+            } else if($a[$i] > $b[$j]) {
+                $j++;
+            } else {
+                array_push($result, $a[$i]);
+                $i++;
+                $j++;
+            }
+        }
+        
+        return $result;
+    }
 
     private static function pairUnion($a, $b){
         $result = array();
@@ -146,6 +174,21 @@ class PhCollect{
         return $result;
     }
     
+    private static function sanitizeArgumentList($argSet){
+        $args = array();
+
+        foreach($argSet as $arg){
+            //If an argument is a PhCollection then get the array
+            if(gettype($arg) != "array" && method_exists($arg, "toArray")){
+                array_push($args, $arg->toArray());
+            } else {
+                array_push($args, $arg);
+            }
+        }
+
+        return $args;
+    }
+
 }
 
 class_alias("PhCollect", "PHC");

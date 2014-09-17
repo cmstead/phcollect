@@ -44,6 +44,9 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 **Lists**
 
 - Inherits from tuple
+- intersect(array/collection $dataset [...])
+    - Variable arity -- accepts 1+ arrays or collections to perform intersection with
+    - Returns original collection with intersection applied
 - pop()
     - Pops last element from list and returns it
 - push(Mixed $value)
@@ -64,6 +67,4 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 
 ##Upcoming development
 
-- intersect(array/collection $dataset [...])
-    - Variable arity -- accepts 1+ arrays or collections to perform intersection with
-    - Returns original collection with intersection applied
+Nothing currently upcoming

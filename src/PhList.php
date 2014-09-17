@@ -42,6 +42,15 @@ class PhList extends PhTuple{
         return $this->create($result);
     }
 
+    public function intersect(){
+        $args = func_get_args();
+        array_push($args, $this->_collection);
+
+        $result = forward_static_call_array(array("PHC", "intersect"), $args);
+
+        return $this->create($result);
+    }
+
 }
 
 ?>
