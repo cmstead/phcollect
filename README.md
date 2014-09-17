@@ -5,6 +5,27 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 
 ##Current functionality
 
+**Static/Core**
+- every(array, callable $userFn)
+    - Performs user defined function on each element
+    - escapable loop by returning false
+- filter(array, callable $comparator)
+    - Returns collection of all elements in original collection which $locator returns true for
+- identity($value)
+    - returns identity collection
+- intersect(array[, array/collection, ...])
+    - Variable arity -- accepts 1+ arrays or collections to perform intersection with
+    - Returns original collection with intersection applied
+- map(array, callable $modifier)
+    - Returns new collection with $modifier function applied to all members of original collection
+- partial(callable/array/string $userValue[, Mixed arguments])
+    - Performs a right-partial application of passed values on provided function
+    - Accepts static functions as an array of names: array(class name, function name)
+    - Accepts internal static functions as a string: "function name"
+- union(array[, array/collection $dataset, ...])
+    - Variable arity -- accepts 1+ arrays or collections to perform union with
+    - Returns original collection with union applied
+
 **Collection Interface**
 
 - Core functions defined here
@@ -69,4 +90,6 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 
 ##Upcoming development
 
-Nothing currently upcoming
+- thread(collection/array, function[, function, ...])
+    - Performs serial execution of passed functions using the output of the previous as the right-most argument of the next
+    - Static only (collections implicitly allow function chaining/threading)
