@@ -106,6 +106,24 @@ class PhCollectTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals(15, $addExtendible(4, 5));
     }
     
+    public function testPartialAcceptsStaticFunctionNameArrayAndCallsThrough(){
+        $filterPartial = PHC::partial(array("PHC", "filter"), array(1, 2, 3, 4, 5, 6));
+        $result = $filterPartial(function($value){
+            return $value % 2 == 0;
+        });
+
+        $this->assertEquals("2, 4, 6", implode(", ", $result));
+    }
+    
+    public function testPartialAcceptsPHCStaticFunctionNameAndCallsThrough(){
+        $filterPartial = PHC::partial("filter", array(1, 2, 3, 4, 5, 6));
+        $result = $filterPartial(function($value){
+            return $value % 2 == 0;
+        });
+
+        $this->assertEquals("2, 4, 6", implode(", ", $result));
+    }
+    
     public function testUnionReturnsAnArray(){
         $unionResult = PHC::union();
 

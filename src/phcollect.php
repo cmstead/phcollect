@@ -82,11 +82,12 @@ class PhCollect{
         return $value;
     }
     
-    public static function partial(callable $userFn){
+    public static function partial($userValue){
         $functionArgs = array_slice(func_get_args(), 1);
+        $userFn = (gettype($userValue) != "object") ? self::staticPartial($userValue) : $userValue ;
         
         return function() use ($userFn, $functionArgs) {
-            $allArgs = array_merge($functionArgs, func_get_args());
+            $allArgs = self::union($functionArgs, func_get_args());
             return call_user_func_array($userFn, $allArgs);
         };
     }
@@ -187,6 +188,13 @@ class PhCollect{
         }
 
         return $args;
+    }
+    
+    private static function staticPartial($staticFunc){
+        $staticFunc = (gettype($staticFunc) == "array") ? $staticFunc : array("PHC", $staticFunc);
+        return function() use ($staticFunc){
+            return forward_static_call_array($staticFunc, func_get_args());
+        };
     }
 
 }
