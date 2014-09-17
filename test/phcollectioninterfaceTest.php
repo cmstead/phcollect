@@ -104,22 +104,22 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals($testCollection, $returnedCollection);
     }
     
-    public function testForeveryExecutesForEachArrayElement(){
+    public function testEveryExecutesForEachArrayElement(){
         $testArray = array(1, 2);
         $finalArray = array();
 
-        PHC::forevery($testArray, function ($value) use (&$finalArray){
+        PHC::every($testArray, function ($value) use (&$finalArray){
             array_push($finalArray, $value * 2);
         });
         
         $this->assertEquals("2, 4", implode(", ", $finalArray));
     }
     
-    public function testForeveryExitsWhenFalseIsRetured(){
+    public function testEveryExitsWhenFalseIsRetured(){
         $testArray = array(1, 2);
         $finalArray = array();
 
-        PHC::forevery($testArray, function ($value) use (&$finalArray){
+        PHC::every($testArray, function ($value) use (&$finalArray){
             array_push($finalArray, $value * 2);
             return false;
         });
@@ -127,20 +127,20 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals("2", implode(", ", $finalArray));
     }
 
-    public function testForeveryExecutesForEachCollectionElement(){
+    public function testEveryExecutesForEachCollectionElement(){
         $testCollection = new PhCollection(array(1, 2));
         $finalArray = array();
 
-        $testCollection->forevery(function ($value) use (&$finalArray){
+        $testCollection->every(function ($value) use (&$finalArray){
             array_push($finalArray, $value * 2);
         });
         
         $this->assertEquals("2, 4", implode(", ", $finalArray));
     }
     
-    public function testForeveryReturnsCallingCollection(){
+    public function testEveryReturnsCallingCollection(){
         $testCollection = new PhCollection(array(1, 2));
-        $returnedCollection = $testCollection->forevery(function(){});
+        $returnedCollection = $testCollection->every(function(){});
         
         $this->assertEquals($testCollection, $returnedCollection);
     }

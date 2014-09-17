@@ -7,6 +7,11 @@ abstract class PhCollectionInterface{
     public abstract function create($newCollection);
     protected abstract function initCollectionValues($collectionValues);
 
+    public function every(callable $userFn){
+        PHC::every($this->_collection, $userFn);
+        return $this;
+    }
+
     public function filter(callable $comparator){
         return $this->create(PhCollect::filter($this->_collection, $comparator));
     }
@@ -15,11 +20,6 @@ abstract class PhCollectionInterface{
         return PhCollect::find($this->_collection, $comparator);
     }
     
-    public function forevery(callable $userFn){
-        PHC::forevery($this->_collection, $userFn);
-        return $this;
-    }
-
     public function get($index){
         return (isset($this->_collection[$index])) ? $this->_collection[$index] : null;
     }
