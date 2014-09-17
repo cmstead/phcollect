@@ -76,7 +76,7 @@ echo implode(", ", $exampleList->toArray());
     </ul>
   </li>
 
-  <li>foreach(callable $userFn)
+  <li>every(callable $userFn)
     <ul>
       <li>Performs user defined function on each element</li>
       <li>escapable loop by returning false</li>
@@ -110,6 +110,8 @@ echo implode(", ", $exampleList->toArray());
   <li>partial(callable $userFn[, Mixed arguments])
     <ul>
       <li>Performs a right-partial application of passed values on provided function</li>
+      <li>Accepts static functions as an array of names: array(class name, function name)</li>
+      <li>Accepts internal static functions as a string: "function name"</li>
     </ul>
   </li>
 
