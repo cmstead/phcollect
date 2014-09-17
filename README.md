@@ -23,8 +23,10 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Returns count of elements in collection
 - map(callable $modifier)
     - Returns new collection with $modifier function applied to all members of original collection
-- partial(callable $userFn[, Mixed arguments])
+- partial(callable/array/string $userValue[, Mixed arguments])
     - Performs a right-partial application of passed values on provided function
+    - Accepts static functions as an array of names: array(class name, function name)
+    - Accepts internal static functions as a string: "function name"
 - toArray()
     - Returns a standard PHP associative of collection key/value pairs
 
