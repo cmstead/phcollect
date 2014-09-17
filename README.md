@@ -12,12 +12,19 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Returns collection of all elements in original collection which $locator returns true for
 - find(callable $locator)
     - Returns first element $locator returns true for
+- forevery(callable $userFn)
+    - Performs user defined function on each element
+    - escapable loop by returning false
+- identity()
+    - returns identity collection
 - get(Mixed $index)
     - Returns collection value at the provided index
 - length()
     - Returns count of elements in collection
 - map(callable $modifier)
     - Returns new collection with $modifier function applied to all members of original collection
+- partial(callable $userFn[, Mixed arguments])
+    - Performs a right-partial application of passed values on provided function
 - toArray()
     - Returns a standard PHP associative of collection key/value pairs
 
@@ -37,6 +44,9 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 **Lists**
 
 - Inherits from tuple
+- intersect(array/collection $dataset [...])
+    - Variable arity -- accepts 1+ arrays or collections to perform intersection with
+    - Returns original collection with intersection applied
 - pop()
     - Pops last element from list and returns it
 - push(Mixed $value)
@@ -45,6 +55,9 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Returns a list containing a subset of the elements of the original based on the offset and length passed
 - sort([callable $comparator])
     - Sorts list elements either in PHP sort standard order or using a comparator function
+- union(array/collection $dataset [...])
+    - Variable arity -- accepts 1+ arrays or collections to perform union with
+    - Returns original collection with union applied
 
 **Maps**
 
@@ -54,16 +67,4 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 
 ##Upcoming development
 
-- foreach(callable $userFn)
-    - Performs user defined function on each element
-    - escapable loop by returning false
-- identity()
-    - returns identity collection
-- intersect(array/collection $dataset [...])
-    - Variable arity -- accepts 1+ arrays or collections to perform intersection with
-    - Returns original collection with intersection applied
-- partial(callable $userFn[, Mixed arguments])
-    - Performs a right-partial application of passed values on provided function
-- union(array/collection $dataset [...])
-    - Variable arity -- accepts 1+ arrays or collections to perform union with
-    - Returns original collection with union applied
+Nothing currently upcoming

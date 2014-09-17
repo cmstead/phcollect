@@ -135,7 +135,55 @@ class PhListTests extends PHPUnit_Framework_TestCase{
 
         $this->assertEquals($testList->toArray(), $expectedSet);
     }
-    
+
+    public function testUnionReturnsAList(){
+        $testList = new PhList(1, 2, 3);
+        $returnedValue = $testList->union();
+
+        $this->assertEquals("PhList", get_class($returnedValue));
+    }
+
+    public function testUnionReturnsUnionOfListAndArrays(){
+        $testList = new PhList(1, 2, 3);
+        $returnedValue = $testList->union(array(2, 3, 4), array(5, 1, 3));
+
+        $this->assertEquals("1, 2, 3, 4, 5", implode(", ", $returnedValue->toArray()));
+    }
+
+    public function testUnionAcceptsLists(){
+        $testList = new PhList(1, 2, 3);
+        $list1 = new PhList(2, 3, 4);
+        $list2 = new PhList(5, 3, 1);
+
+        $result = $testList->union($list1, $list2);
+
+        $this->assertEquals("1, 2, 3, 4, 5", implode(", ", $result->toArray()));
+    }
+
+    public function testIntersectReturnsAList(){
+        $testList = new PhList(1, 2, 3);
+        $returnedValue = $testList->intersect();
+
+        $this->assertEquals("PhList", get_class($returnedValue));
+    }
+
+    public function testIntersectReturnsIntersectionOfListAndArrays(){
+        $testList = new PhList(1, 2, 3);
+        $returnedValue = $testList->intersect(array(2, 3, 4), array(5, 1, 3));
+
+        $this->assertEquals("3", implode(", ", $returnedValue->toArray()));
+    }
+
+    public function testUIntersectAcceptsLists(){
+        $testList = new PhList(1, 2, 3);
+        $list1 = new PhList(2, 3, 4);
+        $list2 = new PhList(5, 3, 1);
+
+        $result = $testList->intersect($list1, $list2);
+
+        $this->assertEquals("3", implode(", ", $result->toArray()));
+    }
+
     public function testPhListActionsAreChainable(){
         $testList = new PhList(4, 2, 1, 3);
         $finalOutput = $testList->sort()
