@@ -8,13 +8,13 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 **Collection Interface**
 
 - Core functions defined here
+- every(callable $userFn)
+    - Performs user defined function on each element
+    - escapable loop by returning false
 - filter(callable $comparator)
     - Returns collection of all elements in original collection which $locator returns true for
 - find(callable $locator)
     - Returns first element $locator returns true for
-- forevery(callable $userFn)
-    - Performs user defined function on each element
-    - escapable loop by returning false
 - identity()
     - returns identity collection
 - get(Mixed $index)
