@@ -34,6 +34,14 @@ class PhCollect{
     
     /* Functional behaviors */
     
+    public static function every($dataSet, callable $userFn){
+        foreach($dataSet as $value){
+            if($userFn($value) === false){
+                break;
+            }
+        }
+    }
+
     public static function filter($dataSet, callable $comparator){
         $finalOutput = array();
 
@@ -59,14 +67,6 @@ class PhCollect{
         return $finalValue;
     }
     
-    public static function forevery($dataSet, callable $userFn){
-        foreach($dataSet as $value){
-            if($userFn($value) === false){
-                break;
-            }
-        }
-    }
-
     public static function map($dataSet, callable $userFn){
         $finalSet = array();
 
