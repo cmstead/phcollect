@@ -22,7 +22,7 @@
 
 
         <ul>
-          <li><a href="https://github.com/cmstead/phcollect/releases/download/v0.2/release.zip">Release <strong>v0.2</strong></a></li>
+          <li><a href="https://github.com/cmstead/phcollect/releases/download/v0.2.1/release.zip">Release <strong>v0.2.1</strong></a></li>
           <li><a href="https://github.com/cmstead/phcollect/tarball/master">Source <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/cmstead/phcollect">View On <strong>GitHub</strong></a></li>
         </ul>
@@ -59,12 +59,70 @@ echo implode(", ", $exampleList->toArray());
 <h2>
 <a name="current-functionality" class="anchor" href="#current-functionality"><span class="octicon octicon-link"></span></a>Current functionality</h2>
 
+<h3>Static Functions</h3>
+
+<ul>
+    <li>every(array, callable $userFn)
+        <ul>
+            <li>Performs user defined function on each element</li>
+            <li>escapable loop by returning false</li>
+        </ul>
+    </li>
+
+    <li>filter(array, callable $comparator)
+        <ul>
+            <li>Returns collection of all elements in original collection which $locator returns true for</li>
+        </ul>
+    </li>
+
+    <li>identity($value)
+        <ul>
+            <li>returns identity collection</li>
+        </ul>
+    </li>
+
+    <li>intersect(array[, array/collection, ...])
+        <ul>
+            <li>Variable arity -- accepts 1+ arrays or collections to perform intersection with</li>
+            <li>Returns original collection with intersection applied</li>
+        </ul>
+    </li>
+
+    <li>map(array, callable $modifier)
+        <ul>
+            <li>Returns new collection with $modifier function applied to all members of original collection</li>
+        </ul>
+    </li>
+
+    <li>partial(callable/array/string $userValue[, Mixed arguments])
+        <ul>
+            <li>Performs a right-partial application of passed values on provided function</li>
+            <li>Accepts static functions as an array of names: array(class name, function name)</li>
+            <li>Accepts internal static functions as a string: "function name"</li>
+        </ul>
+    </li>
+
+    <li>union(array[, array/collection $dataset, ...])
+        <ul>
+            <li>Variable arity -- accepts 1+ arrays or collections to perform union with</li>
+            <li>Returns original collection with union applied</li>
+        </ul>
+    </li>
+</ul>
+
 <h3>Collection Interface</h3>
 
 <ul>
   <li>Core functions defined here</li>
-  
-  <li>filter(callable $comparator)
+
+    <li>every(callable $userFn)
+        <ul>
+            <li>Performs user defined function on each element</li>
+            <li>escapable loop by returning false</li>
+        </ul>
+    </li>
+
+    <li>filter(callable $comparator)
     <ul>
       <li>Returns collection of all elements in original collection which $locator returns true for</li>
     </ul>
@@ -73,13 +131,6 @@ echo implode(", ", $exampleList->toArray());
   <li>find(callable $locator)
     <ul>
       <li>Returns first element $locator returns true for</li>
-    </ul>
-  </li>
-
-  <li>every(callable $userFn)
-    <ul>
-      <li>Performs user defined function on each element</li>
-      <li>escapable loop by returning false</li>
     </ul>
   </li>
 
