@@ -153,6 +153,12 @@ class PhCollectTest extends PHPUnit_Framework_TestCase{
 
         $this->assertEquals("1, 2, 3, 4, 5", implode(", ", $result));
     }
+
+    public function testUnionReturnsArrayWithUniqueValues(){
+        $result = PHC::union(array(1, 2, 3, 3, 4), array(2, 4, 5));
+
+        $this->assertEquals("1, 2, 3, 4, 5", implode(", ", $result));
+    }
     
 }
 

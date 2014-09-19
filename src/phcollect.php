@@ -151,6 +151,8 @@ class PhCollect{
 
     private static function pairUnion($a, $b){
         $result = array();
+        $a = array_values(array_unique($a));
+        $b = array_values(array_unique($b));
         $i = $j = 0;
 
         while($i < sizeof($a) && $j < sizeof($b)){

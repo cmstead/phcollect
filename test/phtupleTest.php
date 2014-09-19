@@ -22,6 +22,15 @@ class PhTupleTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals(1, $testTuple->length());
     }
 
+    public function testFilterDoesNotReturnASparseArray(){
+        $testTuple = new PhTuple(1, 2, 3, 4, 5, 6, 7, 8);
+        $returnedTuple = $testTuple->filter(function($value){
+            return $value % 2 === 0;
+        });
+
+        $this->assertEquals(4, $returnedTuple->nth(1));
+    }
+
     public function testFirstGetsFirstValueOfList(){
         $testTuple = new PhTuple(1, 2, 3, 4);
         $this->assertEquals($testTuple->first(), 1);
