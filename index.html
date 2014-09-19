@@ -22,7 +22,7 @@
 
 
         <ul>
-          <li><a href="https://github.com/cmstead/phcollect/releases/download/v0.2.1/release.zip">Release <strong>v0.2.1</strong></a></li>
+          <li><a href="https://github.com/cmstead/phcollect/releases/download/v0.2.2/release.zip">Release <strong>v0.2.2</strong></a></li>
           <li><a href="https://github.com/cmstead/phcollect/tarball/master">Source <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/cmstead/phcollect">View On <strong>GitHub</strong></a></li>
         </ul>
@@ -264,7 +264,13 @@ echo implode(", ", $exampleList->toArray());
 <h2><a name="upcoming-development" class="anchor" href="#upcoming-development"><span class="octicon octicon-link"></span></a>Upcoming development</h2>
 
 <ul>
-  <li>Nothing currently upcoming</li>
+    <li>thread(collection/array, function[, function, ...])
+
+        <ul>
+            <li>Performs serial execution of passed functions using the output of the previous as the right-most argument of the next</li>
+            <li>Static only (collections implicitly allow function chaining/threading)</li>
+        </ul>
+    </li>
 </ul>
       </section>
       <footer>
