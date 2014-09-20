@@ -41,6 +41,11 @@ abstract class PhCollectionInterface{
         return $partial($this);
     }
 
+    public function thread(){
+        $threadArgs = array_merge(array($this), func_get_args());
+        return forward_static_call_array(array("PHC", "thread"), $threadArgs);
+    }
+
     public function toArray(){
         return $this->_collection;
     }

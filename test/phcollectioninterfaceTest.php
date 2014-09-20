@@ -108,6 +108,22 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals($testCollection, $returnedValue);
     }
 
+    public function testThreadOperatesOnCallingCollection(){
+        $testCollection = new PhCollection(array(1, 2, 3, 4));
+        $sum = function ($a, $b){
+            return $a + $b;
+        };
+        $collectionSum = function ($collection) use ($sum){
+            $list = PHC::create("list", $collection->toArray());
+            return $list->fold($sum);
+        };
+        $result = $testCollection->thread($collectionSum, function($value){
+            return $value * 10;
+        });
+
+        $this->assertEquals(100, $result);
+    }
+
 }
 
 class PhCollection extends PhCollectionInterface{
