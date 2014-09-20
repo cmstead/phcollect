@@ -15,21 +15,33 @@ foreach($collectionFiles as $name){
 
 class PhCollect{
 
+    private static $supportedCollections = array(
+        "list" => "PhList",
+        "map" => "PhMap",
+        "tuple" => "PhTuple"
+    );
+
     public static function phtuple(){
-        return self::create("PhTuple", func_get_args());
+        return self::create("tuple", func_get_args());
     }
 
     public static function phlist(){
-        return self::create("PhList", func_get_args());
+        return self::create("list", func_get_args());
     }
 
     public static function phmap(){
-        return self::create("PhMap", func_get_args());
+        return self::create("map", func_get_args());
     }
 
-    protected static function create($type, $args){
-        $collectionReflectionClass = new ReflectionClass($type);
-        return $collectionReflectionClass->newInstanceArgs($args);
+    public static function create($type, $args){
+        $className = (isset(self::$supportedCollections[$type]))
+            ? self::$supportedCollections[$type]
+            : null;
+
+        if($className !== null){
+            $collectionReflectionClass = new ReflectionClass($className);
+            return $collectionReflectionClass->newInstanceArgs($args);
+        }
     }
     
     /* Functional behaviors */
@@ -66,7 +78,24 @@ class PhCollect{
         
         return $finalValue;
     }
-    
+
+    public static function identity($value){
+        return $value;
+    }
+
+    public static function intersect(){
+        $args = self::sanitizeArgumentList(func_get_args());
+        $result = self::getInitialArgument($args);
+        sort($result);
+
+        for($i = 1; $i < sizeof($args); $i++){
+            sort($args[$i]);
+            $result = self::pairIntersect($result, $args[$i]);
+        }
+
+        return $result;
+    }
+
     public static function map($dataSet, callable $userFn){
         $finalSet = array();
 
@@ -77,11 +106,7 @@ class PhCollect{
 
         return $finalSet;
     }
-    
-    public static function identity($value){
-        return $value;
-    }
-    
+
     public static function partial($userValue){
         $functionArgs = array_slice(func_get_args(), 1);
         $userFn = (gettype($userValue) != "object") ? self::staticPartial($userValue) : $userValue ;
@@ -90,6 +115,17 @@ class PhCollect{
             $allArgs = self::union($functionArgs, func_get_args());
             return call_user_func_array($userFn, $allArgs);
         };
+    }
+
+    public static function thread($initialValue){
+        $finalValue = $initialValue;
+
+        for($i = 1; $i < sizeof(func_get_args()); $i++){
+            $userFn = func_get_arg($i);
+            $finalValue = $userFn($finalValue);
+        }
+
+        return $finalValue;
     }
 
     public static function union(){
@@ -105,19 +141,6 @@ class PhCollect{
         return $result;
     }
     
-    public static function intersect(){
-        $args = self::sanitizeArgumentList(func_get_args());
-        $result = self::getInitialArgument($args);
-        sort($result);
-        
-        for($i = 1; $i < sizeof($args); $i++){
-            sort($args[$i]);
-            $result = self::pairIntersect($result, $args[$i]);
-        }
-        
-        return $result;
-    }
-
     /* private helper functions */
 
     private static function getInitialArgument($args){
