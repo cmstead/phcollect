@@ -22,6 +22,9 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Performs a right-partial application of passed values on provided function
     - Accepts static functions as an array of names: array(class name, function name)
     - Accepts internal static functions as a string: "function name"
+- thread(collection/array, function[, function, ...])
+    - Performs serial execution of passed functions using the output of the previous as the right-most argument of the next
+    - Static only (collections implicitly allow function chaining/threading)
 - union(array[, array/collection $dataset, ...])
     - Variable arity -- accepts 1+ arrays or collections to perform union with
     - Returns original collection with union applied
@@ -48,6 +51,9 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - Performs a right-partial application of passed values on provided function
     - Accepts static functions as an array of names: array(class name, function name)
     - Accepts internal static functions as a string: "function name"
+- thread(collection/array, function[, function, ...])
+    - Performs serial execution of passed functions using the output of the previous as the right-most argument of the next
+    - Static only (collections implicitly allow function chaining/threading)
 - toArray()
     - Returns a standard PHP associative of collection key/value pairs
 
@@ -90,6 +96,4 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 
 ##Upcoming development
 
-- thread(collection/array, function[, function, ...])
-    - Performs serial execution of passed functions using the output of the previous as the right-most argument of the next
-    - Static only (collections implicitly allow function chaining/threading)
+Nothing upcoming

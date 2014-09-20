@@ -1,7 +1,14 @@
 <?php
 
 class PhCollectTest extends PHPUnit_Framework_TestCase{
-    
+
+    public function testBuildReturnsATupleBuiltWithAnArray(){
+        $testTuple = PHC::create("tuple", array(1, 2, 3));
+
+        $this->assertEquals("PhTuple", get_class($testTuple));
+        $this->assertEquals("1, 2, 3", implode(", ", $testTuple->toArray()));
+    }
+
     public function testFindReturnsElementIfFound(){
         $testCollection = new PhCollection(array(1, 2, 3, 4));
         $returnedValue = $testCollection->find(function($value){
@@ -122,6 +129,36 @@ class PhCollectTest extends PHPUnit_Framework_TestCase{
         });
 
         $this->assertEquals("2, 4, 6", implode(", ", $result));
+    }
+
+    public function testThreadReturnsPassedValueWhenNoFunctionIsProvided(){
+        $returnedValue = PHC::thread(5);
+
+        $this->assertEquals(5, $returnedValue);
+    }
+
+    public function testThreadCallsFunctionWithPassedValueAndReturnsResult(){
+        $returnedValue = PHC::thread(5, function($value){ return $value * 2; });
+        $this->assertEquals(10, $returnedValue);
+    }
+
+    public function testThreadCallsMultipleFunctionsSeriallyAndReturnsResult(){
+        $returnedValue = PHC::thread(5,
+            function($value){
+                return $value + 6;
+            },
+            function ($value){
+                return $value * 5;
+            },
+            function ($value){
+                return $value - 6;
+            },
+            function ($value){
+                return $value / 7;
+            }
+        );
+
+        $this->assertEquals(7, $returnedValue);
     }
     
     public function testUnionReturnsAnArray(){
