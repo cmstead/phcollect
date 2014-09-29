@@ -18,14 +18,14 @@ class PhList extends PhTuple{
     }
     
     public function slice($offset, $length=null){
-        $sliceList = ($length != null) 
+        $sliceList = ($length !== null)
             ? array_slice($this->_collection, $offset, $length) 
             : array_slice($this->_collection, $offset);
         return $this->create($sliceList);
     }
 
     public function sort(callable $comparator = null){
-        if($comparator == null){
+        if($comparator === null){
             sort($this->_collection);
         } else {
             usort($this->_collection, $comparator);

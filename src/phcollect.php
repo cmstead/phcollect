@@ -90,26 +90,21 @@ class PhCollect{
 
         for($i = 1; $i < sizeof($args); $i++){
             sort($args[$i]);
-            $result = self::pairIntersect($result, $args[$i]);
+            $result = array_intersect($result, $args[$i]);
         }
 
         return $result;
     }
 
     public static function map($dataSet, callable $userFn){
-        $finalSet = array();
-
-        foreach($dataSet as $key=>$value){
-            $finalValue = $userFn($value);
-            $finalSet[$key] = $finalValue;
-        }
+        $finalSet = array_map($userFn, $dataSet);
 
         return $finalSet;
     }
 
     public static function partial($userValue){
         $functionArgs = array_slice(func_get_args(), 1);
-        $userFn = (gettype($userValue) != "object") ? self::staticPartial($userValue) : $userValue ;
+        $userFn = (gettype($userValue) !== "object") ? self::staticPartial($userValue) : $userValue ;
         
         return function() use ($userFn, $functionArgs) {
             $allArgs = self::union($functionArgs, func_get_args());
@@ -131,11 +126,12 @@ class PhCollect{
     public static function union(){
         $args = self::sanitizeArgumentList(func_get_args());
         $result = self::getInitialArgument($args);
+        $result = ($result !== null) ? $result : array();
         sort($result);
 
         for($i = 1; $i < sizeof($args); $i++){
             sort($args[$i]);
-            $result = self::pairUnion($result, $args[$i]);
+            $result = self::pairUnion($result, array_values($args[$i]));
         }
 
         return $result;
@@ -144,32 +140,13 @@ class PhCollect{
     /* private helper functions */
 
     private static function getInitialArgument($args){
-        $initialArgument = array();
+        $initialArgument = null;
         
         if(sizeof($args) > 0){
             $initialArgument = $args[0];
         }
         
         return $initialArgument;
-    }
-
-    private static function pairIntersect($a, $b){
-        $result = array();
-        $i = $j = 0;
-
-        while($i < sizeof($a) && $j < sizeof($b)){
-            if($a[$i] < $b[$j]){
-                $i++;
-            } else if($a[$i] > $b[$j]) {
-                $j++;
-            } else {
-                array_push($result, $a[$i]);
-                $i++;
-                $j++;
-            }
-        }
-        
-        return $result;
     }
 
     private static function pairUnion($a, $b){
@@ -205,7 +182,7 @@ class PhCollect{
 
         foreach($argSet as $arg){
             //If an argument is a PhCollection then get the array
-            if(gettype($arg) != "array" && method_exists($arg, "toArray")){
+            if(gettype($arg) !== "array" && method_exists($arg, "toArray")){
                 array_push($args, $arg->toArray());
             } else {
                 array_push($args, $arg);
@@ -216,7 +193,7 @@ class PhCollect{
     }
     
     private static function staticPartial($staticFunc){
-        $staticFunc = (gettype($staticFunc) == "array") ? $staticFunc : array("PHC", $staticFunc);
+        $staticFunc = (gettype($staticFunc) === "array") ? $staticFunc : array("PHC", $staticFunc);
         return function() use ($staticFunc){
             return forward_static_call_array($staticFunc, func_get_args());
         };

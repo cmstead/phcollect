@@ -33,7 +33,7 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
             return $value * 5;
         });
 
-        $this->assertEquals(false, $testCollection == $returnedCollection);
+        $this->assertEquals(false, $testCollection === $returnedCollection);
     }
 
     public function testMapReturnsModifiedCollection(){
@@ -58,7 +58,7 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
         $testCollection = new PhCollection(array(1, 2, 3, 4));
         $expectedResult = "2, 4";
         $returnedCollection = $testCollection->filter(function($value){
-            return $value % 2 == 0;
+            return $value % 2 === 0;
         });
 
         $this->assertEquals($expectedResult, implode(", ", $returnedCollection->toArray()));
@@ -67,7 +67,7 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
     public function testFilterReturnsEmptyCollectionIfNoElementsMatch(){
         $testCollection = new PhCollection(array(1, 2, 3, 4));
         $returnedCollection = $testCollection->filter(function($value){
-            return $value % 5 == 0;
+            return $value % 5 === 0;
         });
 
         $this->assertEquals(0, $returnedCollection->length());

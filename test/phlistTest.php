@@ -118,15 +118,15 @@ class PhListTests extends PHPUnit_Framework_TestCase{
         $testList->sort(function($a, $b){
             $direction = 0;
 
-            if($a % 2 == 0 && $b % 2 != 0){
+            if($a % 2 === 0 && $b % 2 !== 0){
                 $direction = -1;
-            } else if($a % 2 != 0 && $b % 2 == 0){
+            } else if($a % 2 !== 0 && $b % 2 === 0){
                 $direction = 1;
             }
 
-            if($direction == 0 && $a > $b){
+            if($direction === 0 && $a > $b){
                 $direction = 1;
-            } else if($direction == 0 && $a < $b){
+            } else if($direction === 0 && $a < $b){
                 $direction = -1;
             }
 

@@ -20,7 +20,7 @@ class PhTuple extends PhCollectionInterface{
 
         if($this->length() > 1){
             for($i = 1; $i < $this->length(); $i++){
-                $result = ($result == null) ? $this->first() : $result;
+                $result = ($result === null) ? $this->first() : $result;
                 $result = $userFn($result, $this->nth($i));
             }
         }

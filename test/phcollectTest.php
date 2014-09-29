@@ -12,7 +12,7 @@ class PhCollectTest extends PHPUnit_Framework_TestCase{
     public function testFindReturnsElementIfFound(){
         $testCollection = new PhCollection(array(1, 2, 3, 4));
         $returnedValue = $testCollection->find(function($value){
-            return $value % 3 == 0;
+            return $value % 3 === 0;
         });
 
         $this->assertEquals(3, $returnedValue);
@@ -21,7 +21,7 @@ class PhCollectTest extends PHPUnit_Framework_TestCase{
     public function testFindReturnsNullIfElementIsNotFound(){
         $testCollection = new PhCollection(array(1, 2, 3, 4));
         $returnedValue = $testCollection->find(function($value){
-            return $value % 5 == 0;
+            return $value % 5 === 0;
         });
 
         $this->assertEquals(null, $returnedValue);
@@ -116,7 +116,7 @@ class PhCollectTest extends PHPUnit_Framework_TestCase{
     public function testPartialAcceptsStaticFunctionNameArrayAndCallsThrough(){
         $filterPartial = PHC::partial(array("PHC", "filter"), array(1, 2, 3, 4, 5, 6));
         $result = $filterPartial(function($value){
-            return $value % 2 == 0;
+            return $value % 2 === 0;
         });
 
         $this->assertEquals("2, 4, 6", implode(", ", $result));
@@ -125,7 +125,7 @@ class PhCollectTest extends PHPUnit_Framework_TestCase{
     public function testPartialAcceptsPHCStaticFunctionNameAndCallsThrough(){
         $filterPartial = PHC::partial("filter", array(1, 2, 3, 4, 5, 6));
         $result = $filterPartial(function($value){
-            return $value % 2 == 0;
+            return $value % 2 === 0;
         });
 
         $this->assertEquals("2, 4, 6", implode(", ", $result));
