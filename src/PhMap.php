@@ -1,6 +1,6 @@
 <?php
 
-class PhMap extends PhCollectionInterface{
+class PhMap extends PhCollectionBase{
 
     public function __construct(){
         $this->initCollectionValues(func_get_args());

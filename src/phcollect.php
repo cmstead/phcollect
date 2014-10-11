@@ -4,6 +4,7 @@ $localDirectory = dirname(__FILE__);
 
 $collectionFiles = array(
     "PhCollectionInterface",
+    "PhCollectionBase",
     "PhTuple",
     "PhList",
     "PhMap"

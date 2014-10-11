@@ -1,6 +1,6 @@
 <?php
 
-class PhTuple extends PhCollectionInterface{
+class PhTuple extends PhCollectionBase{
 
     public function __construct(){
         $this->_collection = array();

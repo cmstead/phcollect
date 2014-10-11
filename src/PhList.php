@@ -2,6 +2,51 @@
 
 class PhList extends PhTuple{
 
+    public function add($index, $value){
+        $newCollection = array();
+
+        for($i = 0; $i < sizeof($this->_collection); $i++){
+            if($i === $index){
+                array_push($newCollection, $value);
+            }
+
+            array_push($newCollection, $this->_collection[$i]);
+        }
+
+        $this->_collection = $newCollection;
+    }
+
+    public function clear(){
+        $this->_collection = array();
+    }
+
+    public function contains($value){
+        return in_array($value, $this->_collection, true);
+    }
+
+    public function delete($index){
+        unset($this->_collection[$index]);
+
+        $this->_collection = array_values($this->_collection);
+    }
+
+    public function indexOf($value){
+        return array_search($value, $this->_collection);
+    }
+
+    public function intersect(){
+        $args = func_get_args();
+        array_push($args, $this->_collection);
+
+        $result = forward_static_call_array(array("PHC", "intersect"), $args);
+
+        return $this->create($result);
+    }
+
+    public function isEmpty(){
+        return ($this->length() === 0);
+    }
+
     public function pop(){
         return array_pop($this->_collection);
     }
@@ -38,15 +83,6 @@ class PhList extends PhTuple{
         array_push($args, $this->_collection);
 
         $result = forward_static_call_array(array("PHC", "union"), $args);
-
-        return $this->create($result);
-    }
-
-    public function intersect(){
-        $args = func_get_args();
-        array_push($args, $this->_collection);
-
-        $result = forward_static_call_array(array("PHC", "intersect"), $args);
 
         return $this->create($result);
     }

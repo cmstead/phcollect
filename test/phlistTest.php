@@ -32,7 +32,103 @@ class PhListTests extends PHPUnit_Framework_TestCase{
         $testList = new PhList("1", "2", "3");
         $this->assertEquals($testList->length(), 3);
     }
-    
+
+    public function testPhListHasAddMethod(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(true, method_exists($testList, "add"));
+    }
+
+    public function testPhListAddMethodInsertsValue(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $testList->add(2, 9);
+
+        $this->assertEquals(9, $testList->nth(2));
+    }
+
+    public function testPhListHasContainsMethod(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(true, method_exists($testList, "contains"));
+    }
+
+    public function testPhListHasClearMethod(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(true, method_exists($testList, "clear"));
+    }
+
+    public function testPhListClearEmptiesList(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $testList->clear();
+
+        $this->assertEquals(0, $testList->length());
+    }
+
+    public function testPhListContainsReturnsTrueIfValueExists(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(true, $testList->contains(3));
+    }
+
+    public function testPhListContainsReturnsFalseIfValueDoesNotExist(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(false, $testList->contains(6));
+    }
+
+    public function testPhListHasDeleteMethod(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(true, method_exists($testList, "delete"));
+    }
+
+    public function testPhListDeleteRemovesCorrectValue(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $testList->delete(2);
+
+        $this->assertEquals(4, $testList->nth(2));
+    }
+
+    public function testPhListHasIndexOfMethod(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(true, method_exists($testList, "indexOf"));
+    }
+
+    public function testPhListIndexOfReturnsIndexOfExistingElement(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(1, $testList->indexOf(2));
+    }
+
+    public function testPhListIndexOfReturnsFalseIfElementDoesNotExist(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(false, $testList->indexOf(6));
+    }
+
+    public function testPhListHasIsEmptyMethod(){
+        $testList = new PhList();
+
+        $this->assertEquals(true, method_exists($testList, "isEmpty"));
+    }
+
+    public function testPhListIsEmptyReturnsTrueIfListIsEmpty(){
+        $testList = new PhList();
+
+        $this->assertEquals(true, $testList->isEmpty());
+    }
+
+    public function testPhListIsEmptyReturnsFalsIfListIsNotEmpty(){
+        $testList = new PhList(1, 2, 3, 4, 5);
+
+        $this->assertEquals(false, $testList->isEmpty());
+    }
+
     public function testPushAddsValueToEndOfList(){
         $testList = new PhList(1, 2);
         $testList->push(3);

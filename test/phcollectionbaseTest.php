@@ -3,7 +3,7 @@
 $localDirectory = dirname(__FILE__);
 require_once($localDirectory . "/../src/phcollect.php");
 
-class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
+class PhCollectionBaseTest extends PHPUnit_Framework_TestCase{
 
     public function testToArrayReturnsAnArray(){
         $testCollection = new PhCollection(array());
@@ -126,7 +126,7 @@ class PhCollectionInterfaceTest extends PHPUnit_Framework_TestCase{
 
 }
 
-class PhCollection extends PhCollectionInterface{
+class PhCollection extends PhCollectionBase{
 
     public function __construct($collection){
         $this->_collection = $collection;
