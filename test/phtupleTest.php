@@ -51,6 +51,60 @@ class PhTupleTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals($testTuple->last(), null);
     }
 
+    public function testNthExists(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(true, method_exists($testTuple, "nth"));
+    }
+
+    public function testNthReturnsElementAtKeyIndex(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(3, $testTuple->nth(2));
+    }
+
+    public function testNthReturnsLastElementAtNegativeOne(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(4, $testTuple->nth(-1));
+    }
+
+    public function testNthReturnsNthNegativeElementResolvedFromLength(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(2, $testTuple->nth(-3));
+    }
+
+    public function testModNthExists(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(true, method_exists($testTuple, "modNth"));
+    }
+
+    public function testModNthReturnsNthValue(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(3, $testTuple->modNth(2));
+    }
+
+    public function testModNthReturnsNegativeNthValue(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(2, $testTuple->modNth(-3));
+    }
+
+    public function testModNthReturnsModuloIndexValueForOutOfBoundsValue(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(1, $testTuple->modNth(4));
+    }
+
+    public function testModNthReturnsModuloIndexValueForNegativeOutOfBoundsValue(){
+        $testTuple = new PhTuple(1, 2, 3, 4);
+
+        $this->assertEquals(4, $testTuple->modNth(-5));
+    }
+
     public function testRestReturnsNewListInstance(){
         $testTuple = new PhTuple(1, 2, 3, 4);
         $newList = $testTuple->rest();

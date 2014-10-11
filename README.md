@@ -13,17 +13,17 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 - filter(array, callable $comparator)
     - O(n)
     - Returns collection of all elements in original collection which $locator returns true for
-- identity($value)
+- identity(varied $value)
     - O(1)
     - returns identity collection
-- intersect(array[, array/collection, ...])
+- intersect(mixed array[, array/collection, ...])
     - O(n log n) per array pair
     - Variable arity -- accepts 1+ arrays or collections to perform intersection with
     - Returns original collection with intersection applied
-- map(array, callable $modifier)
+- map(mixed array, callable $modifier)
     - O(n)
     - Returns new collection with $modifier function applied to all members of original collection
-- partial(callable/array/string $userValue[, Mixed arguments])
+- partial(callable/array/string $userValue[, varied arguments])
     - O(1)
     - Performs a right-partial application of passed values on provided function
     - Accepts static functions as an array of names: array(class name, function name)
@@ -32,7 +32,7 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - O(n)
     - Performs serial execution of passed functions using the output of the previous as the right-most argument of the next
     - Static only (collections implicitly allow function chaining/threading)
-- union(array[, array/collection $dataset, ...])
+- union(mixed array[, array/collection $dataset, ...])
     - O(n log n) per array pair
     - Variable arity -- accepts 1+ arrays or collections to perform union with
     - Returns original collection with union applied
@@ -53,7 +53,7 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 - identity()
     - O(1)
     - returns identity collection
-- get(Mixed $index)
+- get(varied $index)
     - O(1)
     - Returns collection value at the provided index
 - length()
@@ -62,7 +62,7 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 - map(callable $modifier)
     - O(n)
     - Returns new collection with $modifier function applied to all members of original collection
-- partial(callable/array/string $userValue[, Mixed arguments])
+- partial(callable/array/string $userValue[, varied arguments])
     - O(n)
     - Performs a right-partial application of passed values on provided function
     - Accepts static functions as an array of names: array(class name, function name)
@@ -86,9 +86,14 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 - last
     - O(1)
     - Returns last element in the tuple
+- modNth(int $index)
+    - O(1)
+    - Returns nth element modded in tuple
+    - Resolves positive and negative integers
 - nth(int $index)
     - O(1)
     - Returns nth element in the tuple
+    - Negative indices return tuple->length() - $index value
 - rest()
     - O(n)
     - Returns new tuple containing all elements but the first of the original collection
@@ -102,7 +107,7 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 - clear()
     - O(1)
     - Clears all values out of list
-- contains(mixed $value)
+- contains(varied $value)
     - O(n);
     - Verifies value can be found in array
     - Returns true upon finding a match, false otherwise
@@ -110,7 +115,7 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - O(n)
     - Removes element at $key location
     - Does not create sparse collection
-- indexOf(mixed $value)
+- indexOf(varied $value)
     - O(n)
     - Returns first index of matching value
 - intersect(array/collection $dataset [...])
@@ -120,7 +125,7 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
 - pop()
     - O(1)
     - Pops last element from list and returns it
-- push(Mixed $value)
+- push(varied $value)
     - O(sum n)
     - Pushes new value on to the end of the list. Returns the updated list
 - slice(int $offset[, int $length])

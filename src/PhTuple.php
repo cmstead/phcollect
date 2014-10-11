@@ -34,7 +34,18 @@ class PhTuple extends PhCollectionBase{
     }
 
     public function nth($index){
-        return $this->get($index);
+        $resolvedIndex = ($index < 0)
+            ? $this->length() + $index
+            : $index;
+
+        return $this->get($resolvedIndex);
+    }
+
+    public function modNth($index){
+        $divisor = $this->length();
+        $resolvedIndex = $index % $divisor;
+
+        return $this->nth($resolvedIndex);
     }
 
     public function rest(){
