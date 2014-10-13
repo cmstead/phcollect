@@ -35,7 +35,7 @@ class PhLinkedListTest extends PHPUnit_Framework_TestCase{
         $testList = new PhLinkedList("Item 1", "Item 2");
         $linkedList = $testList->getList();
 
-        $this->assertEquals(null, $linkedList->getPrevious);
+        $this->assertEquals(null, $linkedList->getPrevious());
     }
 
     public function testConstructorCreatesListFromValues(){

@@ -5,10 +5,14 @@ $localDirectory = dirname(__FILE__);
 $collectionFiles = array(
     "PhCollectionInterface",
     "PhCollectionBase",
+    
     "PhTuple",
-    "PhLinkedList",
     "PhList",
+    
     "PhListItem",
+    "PhLinkedList",
+    "PhStack",
+    
     "PhMap"
 );
 
@@ -19,8 +23,10 @@ foreach($collectionFiles as $name){
 class PhCollect{
 
     private static $supportedCollections = array(
+        "linkedlist" => "PhLinkedList",
         "list" => "PhList",
         "map" => "PhMap",
+        "stack" => "PhStack",
         "tuple" => "PhTuple"
     );
 
@@ -34,6 +40,14 @@ class PhCollect{
 
     public static function phmap(){
         return self::create("map", func_get_args());
+    }
+    
+    public static function phlinkedlist(){
+        return self::create("linkedlist", func_get_args());
+    }
+    
+    public static function phstack(){
+        return self::create("stack", array(PHC::phlinkedlist()));
     }
 
     public static function create($type, $args){

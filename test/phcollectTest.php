@@ -197,6 +197,41 @@ class PhCollectTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals("1, 2, 3, 4, 5", implode(", ", $result));
     }
     
+    /*Collection static instantiation*/
+    
+    public function testPhtupleReturnsPhTuple(){
+        $testTuple = PHC::phtuple(1, 2);
+        
+        $this->assertEquals(true, $testTuple instanceof PhTuple);
+    }
+    
+    public function testPhlistReturnsPhList(){
+        $testList = PHC::phlist(1, 2, 3, 4);
+        
+        $this->assertEquals(true, $testList instanceof PhList);
+    }
+    
+    public function testPhmapReturnsPhMap(){
+        $testMap = PHC::phmap(
+                PHC::phtuple(1, "Test 1"),
+                PHC::phtuple(2, "Test 2")
+            );
+        
+        $this->assertEquals(true, $testMap instanceof PhMap);
+    }
+    
+    public function testPhlinkedlistReturnsPhLinkedList(){
+        $testList = PHC::phlinkedlist(1, 2, 3);
+        
+        $this->assertEquals(true, $testList instanceof PhLinkedList);
+    }
+    
+    public function testPhstackReturnsPhStack(){
+        $testStack = PHC::phstack();
+        
+        $this->assertEquals(true, $testStack instanceof PhStack);
+    }
+    
 }
 
 ?>
