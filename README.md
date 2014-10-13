@@ -98,10 +98,50 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - O(n)
     - Returns new tuple containing all elements but the first of the original collection
 
+**Linked Lists**
+
+- Inherits from core
+- add(various $value)
+    - O(1)
+    - Inerts a value into list at current location
+- delete()
+    - O(1)
+    - Removes value at current location
+- every(callable $userFn)
+    - O(n)
+    - Executes user provided function on each value
+    - breaks loop on return false
+- filter(callable $comparator)
+    - O(n)
+    - Filters on provided comparator function
+- find(callable $comparator)
+    - O(n)
+    - Returns first value that passes comparison
+- get($index)
+    - O(n)
+    - Returns value at index or null if index is out of bounds
+- getCurrent()
+    - O(1)
+    - Returns value at current location
+- getList()
+    - O(1)
+    - Returns root pointer for linked list
+- length()
+    - O(n)
+    - computes and returns current list length
+- map(callable $userFn)
+    - O(n)
+    - applies user function to values
+    - returns new linked list
+    - non-destructive
+- toArray()
+    - O(n)
+    - Returns values as an array
+
 **Lists**
 
 - Inherits from tuple
-- add(int $key, mixed $value)
+- add(int $key, various $value)
     - O(n)
     - Inserts a value into list at key location
 - clear()

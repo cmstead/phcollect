@@ -64,6 +64,13 @@ class PhLinkedListTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals("Item 3", $testList->getCurrent());
     }
 
+    public function testAddSetsRootIfNoRootIsDefined(){
+        $testList = new PhLinkedList();
+        $testList->add("Item 1");
+
+        $this->assertNotEquals(null, $testList->getList());
+    }
+
     public function testGetReturnsItemAtFirstPosition(){
         $testList = new PhLinkedList("Item 1", "Item 2", "Item 3");
         $returnedValue = $testList->get(0);
@@ -166,6 +173,75 @@ class PhLinkedListTest extends PHPUnit_Framework_TestCase{
         $valueArray = $returnedList->toArray();
 
         $this->assertEquals("3, 6, 9, 12", implode(", ", $valueArray));
+    }
+
+    public function testFindReturnsLocatedValue(){
+        $testList = new PhLinkedList(1, 2, 3, 4, 5, 6);
+        $returnedValue = $testList->find(function($value){
+            return $value % 2 === 0;
+        });
+
+        $this->assertEquals(2, $returnedValue);
+    }
+
+    public function testFindReturnsNullIfValueIsNotFound(){
+        $testList = new PhLinkedList(1, 2, 3, 4, 5, 6);
+        $returnedValue = $testList->find(function($value){
+            return $value % 13 === 0;
+        });
+
+        $this->assertEquals(null, $returnedValue);
+    }
+
+    public function testFilterReturnsLinkedList(){
+        $testList = new PhLinkedList(1, 2, 3, 4, 5, 6);
+        $returnedList = $testList->filter(function($value){
+            return $value % 2 === 0;
+        });
+
+        $this->assertEquals(true, $returnedList instanceof PhLinkedList);
+    }
+
+    public function testFilterReturnsAFilteredList(){
+        $testList = new PhLinkedList(1, 2, 3, 4, 5, 6);
+        $returnedList = $testList->filter(function($value){
+            return $value % 2 === 0;
+        });
+
+        $this->assertEquals("2, 4, 6", implode(", ", $returnedList->toArray()));
+    }
+
+    public function testEveryReturnsTheOriginalLinkedList(){
+        $testList = new PhLinkedList();
+        $returnedList = $testList->every(function($value){
+            //noop
+        });
+
+        $this->assertEquals($testList, $returnedList);
+    }
+
+    public function testEveryExecutesPassedFunctionForEachValue(){
+        $testList = new PhLinkedList(1, 2, 3);
+        $outputArray = array();
+
+        $testList->every(function($value) use (&$outputArray){
+            array_push($outputArray, $value * 2);
+        });
+
+        $this->assertEquals("2, 4, 6", implode(", ", $outputArray));
+    }
+
+    public function testEveryExitsOnReturnFalse(){
+        $testList = new PhLinkedList(1, 2, 3);
+        $outputArray = array();
+
+        $testList->every(function($value) use (&$outputArray){
+            array_push($outputArray, $value * 2);
+
+            return false;
+        });
+
+        $this->assertEquals("2", implode(", ", $outputArray));
     }
 
 }

@@ -37,11 +37,51 @@ class PhLinkedList extends PhCollectionBase{
         $this->root = ($previous === null) ? $this->current : $this->root;
     }
 
-    public function every(callable $userFn){}
+    public function every(callable $userFn){
+        $current = $this->root;
 
-    public function filter(callable $comparator){}
+        while($current !== null){
+            if($userFn($current->getValue()) === false){
+                break;
+            }
 
-    public function find(callable $comparator){}
+            $current = $current->getNext();
+        }
+
+        return $this;
+    }
+
+    public function filter(callable $comparator){
+        $current = $this->root;
+        $finalList = new PhLinkedList();
+
+        while($current !== null){
+            if($comparator($current->getValue())){
+                $finalList->add($current->getValue());
+            }
+
+            $current = $current->getNext();
+        }
+
+        return $finalList;
+    }
+
+    public function find(callable $comparator){
+        $current = $this->root;
+        $found = false;
+        $value = null;
+
+        while($found === false && $current !== null){
+            if($comparator($current->getValue())){
+                $value = $current->getValue();
+                $found = true;
+            }
+
+            $current = $current->getNext();
+        }
+
+        return $value;
+    }
 
     public function get($index){
         $this->current = $this->root;
