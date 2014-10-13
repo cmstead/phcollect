@@ -138,6 +138,20 @@ PhCollect is a collections library for PHP which wraps PHP arrays and provides s
     - O(n)
     - Returns values as an array
 
+**Stack**
+
+- Takes linked list as constructor argument
+- push(various $value)
+    - O(1)
+    - Pushes value on to stack.
+    - Stack build on linked list -- adds and deletes are all O(1)
+- pop()
+    - O(1)
+    - Pops value off stack
+- peek()
+    - O(1)
+    - Returns next value on stack
+
 **Lists**
 
 - Inherits from tuple
