@@ -6,7 +6,9 @@ $collectionFiles = array(
     "PhCollectionInterface",
     "PhCollectionBase",
     "PhTuple",
+    "PhLinkedList",
     "PhList",
+    "PhListItem",
     "PhMap"
 );
 
